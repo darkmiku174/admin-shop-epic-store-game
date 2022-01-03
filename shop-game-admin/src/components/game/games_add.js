@@ -15,7 +15,6 @@ class AddGame extends Component {
 				name: "",
 				short_name: "",
 				type: "",
-				brief: "",
 				description: "",
 				developer: "",
 				publisher: "",
@@ -38,6 +37,12 @@ class AddGame extends Component {
 		var target = e.target;
 		var name = target.name;
 		var value = target.value;
+		if (name === "purchase_price" || name === "sale_price") {
+			value = parseInt(value)
+			if (value < 0) {
+				value = 0
+			}
+		}
 		this.setState(pre => ({
 			product: {
 				...pre.product,
@@ -115,8 +120,8 @@ class AddGame extends Component {
 						<div className="video-container" style={{ display: 'flex', width: '25rem' }}>
 							<form style={{ marginLeft: '1rem' }}>
 								<iframe width="400" height="400" src={video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-								<input name={index} type="text" placeholder="url" style={{ width: '25rem' }} onChange={this.onChangeVideo}/>
-								<input name={index} type="text" placeholder="type" style={{ width: '25rem' }} onChange={this.onChangeVideo}/>
+								<input name={index} type="text" placeholder="url" style={{ width: '25rem' }} onChange={this.onChangeVideo} />
+								<input name={index} type="text" placeholder="type" style={{ width: '25rem' }} onChange={this.onChangeVideo} />
 							</form>
 						</div>
 					</Col>
@@ -233,12 +238,12 @@ class AddGame extends Component {
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>12</td>
 															<td style={{ padding: '5px' }}>Tags</td>
-															<td><Tag /></td>
+															<td><Tag tags={product.tags} /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>13</td>
 															<td style={{ padding: '5px' }}>Keys</td>
-															<td><Key /></td>
+															<td><Key keys={product.keys} /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>14</td>

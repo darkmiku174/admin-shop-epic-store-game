@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Button, Table, Container, Modal } from 'react-bootstrap';
-import { FaEdit, FaTrash, FaAngleDoubleDown } from 'react-icons/fa';
-// import { Pagination } from '@material-ui/lab';
+import { Row, Button, Table, Container } from 'react-bootstrap';
+import { FaEdit, FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 class GamesManagement extends Component {
 
@@ -44,8 +44,8 @@ class GamesManagement extends Component {
         var result = 0;
         if (keys.length > 0) {
             keys.map((key, index) => {
-                if(key.status){
-                    result +=1
+                if (key.status) {
+                    result += 1
                 }
             })
         }
@@ -89,7 +89,9 @@ class GamesManagement extends Component {
                 </div>
                 <Container>
                     <div style={{ backgroundColor: 'white' }}>
-                        <Button variant="secondary" style={{ float: 'right', width: '5rem' }}> Thêm</Button>
+                        <Link to="/admin/add_game">
+                            <Button variant="secondary" style={{ float: 'right', width: '5rem' }}> Thêm</Button>
+                        </Link>
                         <Table bordered hover style={{ backgroundColor: 'white', fontSize: '12px' }}>
                             <thead>
                                 <tr>

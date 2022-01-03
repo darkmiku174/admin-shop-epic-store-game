@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Button, Table,Modal } from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa';
-const Include = () => {
+const IncludeIn = () => {
     const [show, setShow] = useState(false);
   
     const handleClose = () => setShow(false);
@@ -9,11 +9,11 @@ const Include = () => {
     return(
         <>
         <Button onClick={handleShow} className="selected-btn" variant="secondary" style={{width:'10rem'}}>
-            Include details  
+            Include in details  
         </Button>
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-            <Modal.Title>Include details</Modal.Title>
+            <Modal.Title>Include in details</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Button variant="secondary" style={{float:'right', marginBottom:'1rem'}}>Thêm</Button>
@@ -21,7 +21,7 @@ const Include = () => {
             <thead>
                 <tr>
                 <th></th>
-                <th>Include</th>
+                <th>Include in </th>
                 </tr>
             </thead>
             <tbody>
@@ -39,4 +39,4 @@ const Include = () => {
         </>                                                              
     )
 }
-export default Include;
+export default IncludeIn;

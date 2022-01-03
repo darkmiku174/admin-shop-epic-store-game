@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GamesManagement from './components/games_management';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from './routes';
-import AddGame from './components/games_add';
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
 				<div className="App">
-					{/* {this.showContentMenus(routes)} */}
-					<AddGame/>
+					{this.showContentMenus(routes)}
 				</div>
 			</Router>
 		);
@@ -26,14 +23,13 @@ class App extends Component {
 						key={index}
 						path={route.path}
 						exact={route.exact}
-						element={"{" + route.main + "}"}
-						render={route.render}
+						component={route.main}
 					/>
 				);
 
 			});
 		}
-		return <Routes>{result}</Routes>;
+		return <Switch>{result}</Switch>;
 	}
 
 }
