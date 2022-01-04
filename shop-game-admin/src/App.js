@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from './routes';
+import Menu from './components/menu/menu';
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
+				<Menu />
 				<div className="App">
 					{this.showContentMenus(routes)}
 				</div>

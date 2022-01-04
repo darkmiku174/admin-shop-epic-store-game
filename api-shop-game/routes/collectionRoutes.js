@@ -1,11 +1,10 @@
 import express from 'express'
-import {getColections, addCollection, deleteCollection, getColection } from '../controllers/collectionSchema.js'
+import { getColections, getCollection, deleteCollection } from '../controllers/collectionControllers.js'
 
 const router = express.Router()
 
 router.get("/", getColections)
-router.post("/add", addCollection)
-// router.route("/delete/:id").get(getColection).delete(deleteCollection)
 
-
+router.get('/:Id', getCollection)
+router.route("/delete/:id").delete(deleteCollection)
 export default router

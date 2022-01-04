@@ -3,6 +3,7 @@ import { Row, Button, Table, Container } from 'react-bootstrap';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import DeleteProductNotification from './notification/delete_product_notification';
 class GamesManagement extends Component {
 
     constructor(props) {
@@ -11,18 +12,6 @@ class GamesManagement extends Component {
             products: [],
             show: false
         }
-    }
-
-    handleClose = () => {
-        this.setState({
-            show: false
-        })
-    }
-
-    handleShow = () => {
-        this.setState({
-            show: true
-        })
     }
 
     componentDidMount() {
@@ -52,7 +41,7 @@ class GamesManagement extends Component {
         return result;
     }
 
-    showProducts(products, show) {
+    showProducts(products) {
         var result = null;
         if (products.length > 0) {
             result = products.map((product, index) => {
@@ -69,10 +58,10 @@ class GamesManagement extends Component {
                         <td>{this.countActiveKeys(product.keys)}</td>
                         <td>KM</td>
                         <td style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            {/* <button onClick={() => this.onClick(product)} key={index}><FaTrash /></button> */}
-                            <button><FaEdit /></button>
-                            {/* <button onClick={() => this.onClick(product)} key={index}><FaTrash /></button> */}
-                            <button><FaTrash /></button>
+                            <Link to={"/admin/game/" + product._id}>
+                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                            </Link>
+                            <DeleteProductNotification data={product._id} />
                         </td>
                     </tr>
                 )
@@ -81,11 +70,11 @@ class GamesManagement extends Component {
         return result;
     }
     render() {
-        var { products, show } = this.state
+        var { products } = this.state
         return (
             <Container>
                 <div style={{ backgroundColor: '#3ac9c9' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Product</p>
+                    <p style={{ color: 'white', fontSize: '23px' }}>Quản lý sản phẩm</p>
                 </div>
                 <Container>
                     <div style={{ backgroundColor: 'white' }}>
@@ -108,7 +97,7 @@ class GamesManagement extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.showProducts(products, show)}
+                                {this.showProducts(products)}
                             </tbody>
                         </Table>
                         <Row style={{ marginTop: '1rem', float: 'right' }}>

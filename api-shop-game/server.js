@@ -4,9 +4,9 @@ import connectDB from "./config/db.js";
 import Cors from 'cors';
 import bodyParser from "body-parser"
 
-// import orderRoutes from "./routes/orderRoutes.js";
+
 import gameRoutes from "./routes/gameRoutes.js";
-// import userRoutes from "./routes/userRoutes.js";
+import collectionRoutes from './routes/collectionRoutes.js'
 
 dotenv.config();
 
@@ -27,9 +27,8 @@ app.get("/", (req, res) => {
 });
 
 // Dùng route ở đây
-// app.use("/api/orders", orderRoutes)
 app.use("/api/games", gameRoutes)
-// app.use("/api/users", userRoutes)
+app.use("/api/collections", collectionRoutes)
 
 const PORT = process.env.PORT || 5000;
 

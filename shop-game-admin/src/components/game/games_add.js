@@ -5,7 +5,6 @@ import Tag from './games_add_tag';
 import Include from './games_add_include';
 import IncludeIn from './games_add_includein';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { formControlClasses } from '@mui/material';
 class AddGame extends Component {
 
 	constructor(props) {
@@ -22,12 +21,12 @@ class AddGame extends Component {
 				platform: "",
 				purchase_price: 0,
 				sale_price: 0,
-				tags: [],
+				tag: [],
 				keys: [],
 				images: [],
 				videos: [],
 				includes: [],
-				includes_in: [],
+				included_in: [],
 				vocher: ""
 			}
 		}
@@ -238,7 +237,7 @@ class AddGame extends Component {
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>12</td>
 															<td style={{ padding: '5px' }}>Tags</td>
-															<td><Tag tags={product.tags} /></td>
+															<td><Tag tags={product.tag} /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>13</td>
@@ -248,7 +247,7 @@ class AddGame extends Component {
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>14</td>
 															<td style={{ padding: '5px' }}>Includes</td>
-															<td><Include /></td>
+															<td><Include includes={product.includes}/></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>15</td>

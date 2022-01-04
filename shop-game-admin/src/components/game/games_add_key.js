@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Table, Modal, Form } from 'react-bootstrap';
+import { Button, Table, Modal, Form, Row, Col } from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa';
 class Key extends Component {
 
@@ -7,7 +7,11 @@ class Key extends Component {
         super(props);
         this.state = {
             show: false,
-            keys: []
+            keys: [],
+            key: {
+                code: "",
+                status: "false"
+            }
         }
     }
 
@@ -31,19 +35,15 @@ class Key extends Component {
     };
 
     onChange = (e) => {
-        var { keys } = this.state
         var target = e.target;
-        var index = target.name;
+        var name = target.name;
         var value = target.value;
-        var key = {
-            code: value,
-            status: "inactive"
-        }
-        if (index >= keys.length) {
-            keys.push(key)
-        } else {
-            keys[index] = key
-        }
+        this.setState(pre => ({
+            key: {
+                ...pre.key,
+                [name]: value
+            }
+        }))
     }
 
     showRowKeys(keys) {
@@ -52,14 +52,8 @@ class Key extends Component {
             result = keys.map((key, index) => {
                 return (
                     <tr className="tr-edit">
-                        <td style={{ padding: '5px' }}>{index + 1}</td>
-                        <td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} name={index} size="sm" type="text" value={this.showKey(key.code)} placeholder="Nhập vào" onChange={this.onChange} /></td>
-                        <td style={{ padding: '0px' }}>
-                            <Form.Select aria-label="Default select example" value={key.status}>
-                                <option value="active">Active</option>
-                                <option value="inactive">Inactive</option>
-                            </Form.Select>
-                        </td>
+                        <td>{key.code}</td>
+                        <td>{key.status}</td>
                         <td>
                             <button onClick={() => this.onDeleteRow(index)} ><FaTrash /></button>
                         </td>
@@ -70,18 +64,9 @@ class Key extends Component {
         return result;
     }
 
-    showKey(code) {
-        if (code !== "") {
-            return code
-        }
-    }
-
-    onAddRow = () => {
+    onAddRow = (key) => {
         var { keys } = this.state;
-        keys.push({
-            code: "",
-            status: "inactive"
-        });
+        keys.push(key);
         this.setState({
             keys
         })
@@ -96,7 +81,7 @@ class Key extends Component {
     }
 
     render() {
-        var { show, keys } = this.state
+        var { show, keys, key } = this.state
         return (
             <>
                 <Button onClick={this.handleShow} className="selected-btn" variant="secondary" style={{ width: '10rem' }}>
@@ -107,13 +92,27 @@ class Key extends Component {
                         <Modal.Title>Key list</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={this.onAddRow}>Thêm</Button>
+                        <Row className='row-1'>
+                            <Col sm={4}>
+                                <Form.Control name="code" size="sm" type="text" placeholder="Nhập vào" onChange={this.onChange} />
+                            </Col>
+                            <Col sm={4}>
+                                <select style={{ height: '2rem', border: '1px solid #ced4da', borderRadius: '4px', marginLeft: "1rem" }}
+                                    name="status"
+                                    onChange={this.onChange}>
+                                    <option value="false" onClick={() => this.onChange}>Inactive</option>
+                                    <option value="true" onClick={() => this.onChange}>Active</option>
+                                </select>
+                            </Col>
+                            <Col sm={4}>
+                                <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(key)}>Thêm</Button>
+                            </Col>
+                        </Row>
                         <Table bordered hover responsive="sm" className="listgame-details">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Code</th>
-                                    <th>Status</th>
+                                    <th>Stastus</th>
                                 </tr>
                             </thead>
                             <tbody>

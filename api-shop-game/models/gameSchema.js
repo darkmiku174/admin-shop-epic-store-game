@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+import keysSchema from './subGameKeysSchema.js';
+import urlSchema from './subGameUrlSchema.js';
 
 var gameSchema = new mongoose.Schema({
     name: String,
@@ -12,31 +14,22 @@ var gameSchema = new mongoose.Schema({
     platform: String,
     purchase_price: Number,
     sale_price: Number,
-    tags: Array,
-    keys: [{
-        code: String,
-        status: String
-    }],
-    images: [{
-        url: String,
-        type: String
-    }],
-    videos: [{
-        url: String,
-        type: String
-    }],
+    tag: Array,
+    keys: [keysSchema],
+    images: [urlSchema],
+    videos: [urlSchema],
     includes: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "games"
+        ref: "Game"
     }],
-    includes_in: [{
+    included_in: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "games"
+        ref: "Game"
     }],
-    vocher: [{
+    vocher: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "vocher"
-    }],
+        ref: "Vocher"
+    },
 }, {
     versionKey: false
 })
