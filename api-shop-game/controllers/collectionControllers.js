@@ -15,10 +15,10 @@ const getCollection = asyncHandler(async (req, res) => {
 });
 
 
-// const addCollection = asyncHandler(async (req, res) => {
-//     const collection = await Collection.create(req.body);
-//     res.json(collection);
-// });
+const addCollection = asyncHandler(async (req, res) => {
+    const collection = await Collection.create(req.body);
+    res.json(collection);
+});
 
 const deleteCollection = asyncHandler(async (req, res) => {
     const collection = await Collection.findByIdAndDelete(req.params.id)
@@ -29,4 +29,4 @@ const deleteCollection = asyncHandler(async (req, res) => {
     }
 });
 
-export { getColections, getCollection, deleteCollection };
+export { getColections, getCollection, deleteCollection, addCollection };
