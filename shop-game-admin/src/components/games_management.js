@@ -9,8 +9,7 @@ class GamesManagement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [],
-            show: false
+            products: []
         }
     }
 
@@ -56,7 +55,6 @@ class GamesManagement extends Component {
                         <td>{product.purchase_price}</td>
                         <td>{product.sale_price}</td>
                         <td>{this.countActiveKeys(product.keys)}</td>
-                        <td>KM</td>
                         <td style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <Link to={"/admin/game/" + product._id}>
                                 <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
@@ -93,7 +91,6 @@ class GamesManagement extends Component {
                                     <th style={{ fontSize: '13px' }}>Giá mua</th>
                                     <th style={{ fontSize: '13px' }}>Giá bán</th>
                                     <th style={{ fontSize: '13px' }}>Kho</th>
-                                    <th style={{ fontSize: '13px' }}>Khuyến mãi</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -53,7 +53,7 @@ class Key extends Component {
                 return (
                     <tr className="tr-edit">
                         <td>{key.code}</td>
-                        <td>{key.status}</td>
+                        <td>{key.status ? "Active" : "Inactive"}</td>
                         <td>
                             <button onClick={() => this.onDeleteRow(index)} ><FaTrash /></button>
                         </td>

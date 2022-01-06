@@ -24,7 +24,6 @@ class DetailGame extends Component {
                 videos: [],
                 includes: [],
                 included_in: [],
-                vocher: ""
             }
         }
     }
@@ -294,11 +293,6 @@ class DetailGame extends Component {
                                                                     </tbody>
                                                                 </Table>
                                                             </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>15</td>
-                                                            <td style={{ padding: '5px' }}>Voucher</td>
-                                                            <td style={{ padding: '5px' }}>{product.vocher}</td>
                                                         </tr>
                                                     </tbody>
                                                 </Table>

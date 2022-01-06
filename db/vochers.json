@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "61d552b738cad8a649ccf54f"
+  },
+  "code": "AINZ10KYEAR",
+  "discount": 20,
+  "type": "sản phẩm",
+  "list_game": [
+    {
+      "$oid": "6193b1e98ee567321631b9a1"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9a2"
+    }
+  ],
+  "count": 0,
+  "create_date": "01/01/2022",
+  "time_expired": "10/01/2022",
+  "status": true
+}]

@@ -5,6 +5,8 @@ import Tag from './games_add_tag';
 import Include from './games_add_include';
 import IncludeIn from './games_add_includein';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 class AddGame extends Component {
 
 	constructor(props) {
@@ -26,10 +28,25 @@ class AddGame extends Component {
 				images: [],
 				videos: [],
 				includes: [],
-				included_in: [],
-				vocher: ""
-			}
+				included_in: []
+			},
+			games: []
 		}
+	}
+
+	componentDidMount() {
+		axios({
+			method: 'GET',
+			url: 'http://localhost:5000/api/games',
+			data: null
+		}).then(res => {
+			console.log(res);
+			this.setState({
+				games: res.data
+			});
+		}).catch(err => {
+			console.log(err);
+		})
 	}
 
 	onChange = (e) => {
@@ -41,6 +58,9 @@ class AddGame extends Component {
 			if (value < 0) {
 				value = 0
 			}
+		}
+		if (name === "release_date") {
+			value = new Date(value)
 		}
 		this.setState(pre => ({
 			product: {
@@ -149,12 +169,24 @@ class AddGame extends Component {
 		}
 		return result;
 	}
+	onAdd = (game) => {
+		axios({
+			method: 'POST',
+			url: 'http://localhost:5000/api/games/add',
+			data: game
+		}).then(res => {
+			const { history } = this.props;
+			if (history) history.push('/');
+		}).catch(err => {
+			console.log(err);
+		})
+	}
 
 	render() {
-		var { product } = this.state
-		console.log(product)
+		var { product, games } = this.state
+		const { history } = this.props;
 		return (
-			<div>
+			(history) ? <div>
 				<Container>
 					<div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
 						<p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm sản phẩm</p>
@@ -247,12 +279,12 @@ class AddGame extends Component {
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>14</td>
 															<td style={{ padding: '5px' }}>Includes</td>
-															<td><Include includes={product.includes}/></td>
+															<td><Include include={product.includes} games={games} /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>15</td>
 															<td style={{ padding: '5px' }}>Includes in</td>
-															<td><IncludeIn /></td>
+															<td><IncludeIn include={product.included_in} games={games} /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>15</td>
@@ -289,12 +321,13 @@ class AddGame extends Component {
 							</Row>
 						</Container>
 					</div>
+					<Button onClick={() => this.onAdd(product)}>Thêm</Button>
 				</Container>
-			</div>
+			</div> : null
 		)
 	}
 }
-export default AddGame;
+export default withRouter(AddGame);
 
 
 

@@ -7,6 +7,7 @@ import bodyParser from "body-parser"
 
 import gameRoutes from "./routes/gameRoutes.js";
 import collectionRoutes from './routes/collectionRoutes.js'
+import vocherRoutes from './routes/vocherRoutes.js'
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 // Dùng route ở đây
 app.use("/api/games", gameRoutes)
 app.use("/api/collections", collectionRoutes)
+app.use("/api/vochers", vocherRoutes)
 
 const PORT = process.env.PORT || 5000;
 

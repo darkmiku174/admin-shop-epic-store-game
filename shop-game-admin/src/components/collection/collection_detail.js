@@ -51,7 +51,7 @@ class DetailCollection extends Component {
             <div>
                 <Container>
                     <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm sản phẩm</p>
+                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết collection</p>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>

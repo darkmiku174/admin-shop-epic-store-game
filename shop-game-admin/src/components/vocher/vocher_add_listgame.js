@@ -3,7 +3,7 @@ import { Button, Table, Modal } from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBar from '../searchbar/search_bar';
-class AddListGame extends Component {
+class AddVocherListGame extends Component {
 
     constructor(props) {
         super(props);
@@ -112,7 +112,7 @@ class AddListGame extends Component {
         )
     }
 }
-export default AddListGame;
+export default AddVocherListGame;
 
 
 

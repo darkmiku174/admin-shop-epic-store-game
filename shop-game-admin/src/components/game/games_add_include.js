@@ -1,42 +1,54 @@
 import React, { Component } from 'react';
-import { Button, Table, Modal, Form } from 'react-bootstrap';
+import { Button, Table, Modal } from 'react-bootstrap';
 import { FaTrash } from 'react-icons/fa';
-class Includes extends Component {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchBar from '../searchbar/search_bar';
+class Include extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             show: false,
-            includes: []
+            include: [],
+            game: "",
+            games: []
         }
     }
 
     handleClose = () => {
-        var { includes } = this.state
+        var { include } = this.state
         this.setState({
             show: false
         })
-        if (includes.length > 0) {
-            includes.map((include, index) => {
-                this.props.includes.push(include)
+        if (include.length > 0) {
+            include.map((game, index) => {
+                this.props.include.push(game)
             })
         }
     };
     handleShow = () => {
+        var { include } = this.state
+        this.props.include.splice(0, include.length)
         this.setState({
             show: true,
+            games: this.props.games
         })
-        var { includes } = this.state
-        this.props.includes.splice(0, includes.length)
     };
 
-    showRow(tags) {
+    onChange = (value) => {
+        this.setState({
+            game: value
+        })
+    }
+
+    showRow(list_game) {
         var result = null;
-        if (tags.length > 0) {
-            result = tags.map((tag, index) => {
+        if (list_game.length > 0) {
+            result = list_game.map((game, index) => {
                 return (
                     <tr className="tr-edit">
-                        <td style={{ padding: '5px' }}>{index + 1}</td>
-                        <td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} name={index} size="sm" type="text" value={this.showTag(tag)} placeholder="Nhập vào" onChange={this.onChange} /></td>
+                        <td>{game._id}</td>
+                        <td>{game.name}</td>
                         <td>
                             <button onClick={() => this.onDeleteRow(index)} ><FaTrash /></button>
                         </td>
@@ -47,34 +59,62 @@ class Includes extends Component {
         return result;
     }
 
+    onAddRow = (game) => {
+        var { games, include } = this.state;
+        games.map((g, index) => {
+            if (g._id === game) {
+                include.push(g)
+                this.setState({
+                    include
+                })
+            }
+        })
+    }
+    onDeleteRow = (index) => {
+        var { include } = this.state
+        include.splice(index, 1)
+        this.setState({
+            include
+        })
+        this.showRow(include)
+    }
+
+
     render() {
-        var { show, includes } = this.state
+        var { show, include, games, game } = this.state
+        console.log(games)
         return (
-            <>
+            <div>
                 <Button onClick={this.handleShow} className="selected-btn" variant="secondary" style={{ width: '10rem' }}>
-                    Include in details
+                    Game List
                 </Button>
                 <Modal show={show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Includes details</Modal.Title>
+                        <Modal.Title>Game List</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button>
+                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(game)}>Thêm</Button>
+                        <SearchBar placeholder="Enter a Book Name..." data={games} onChange={this.onChange} />
                         <Table bordered hover responsive="sm" className="listgame-details">
                             <thead>
                                 <tr>
+                                    <th>ID</th>
+                                    <th>Game's name</th>
                                     <th></th>
-                                    <th>Tên</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.showRow(includes)}
+                                {this.showRow(include)}
                             </tbody>
                         </Table>
                     </Modal.Body>
                 </Modal>
-            </>
+            </div>
         )
     }
 }
-export default Includes;
+export default Include;
+
+
+
+

@@ -9,6 +9,8 @@ import UserManagement from './components/user_management';
 import VoucherManagement from './components/vocher_management';
 import OrderManagement from './components/order_management';
 import CartManagement from './components/cart_management';
+import DetailVocher from './components/vocher/vocher_detail';
+import AddVocher from './components/vocher/vocher_add';
 
 const routes = [
     {
@@ -34,7 +36,7 @@ const routes = [
     {
         path: '/admin/add_collection',
         exact: false,
-        main: ({ match }) => <AddCollection match={match} />
+        main: () => <AddCollection />
     },
     {
         path: '/admin/collection/:id',
@@ -50,6 +52,16 @@ const routes = [
         path: '/vocher_management',
         exact: false,
         main: () => <VoucherManagement />
+    },
+    {
+        path: '/admin/vocher/:id',
+        exact: false,
+        main: ({ match }) => <DetailVocher match={match} />
+    },
+    {
+        path: '/admin/add_vocher',
+        exact: false,
+        main: () => <AddVocher />
     },
     {
         path: '/order_management',

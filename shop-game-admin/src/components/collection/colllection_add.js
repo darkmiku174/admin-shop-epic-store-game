@@ -11,9 +11,9 @@ class AddCollection extends Component {
         this.state = {
             collection: {
                 name: "",
-                list_game: [],
-                games: []
-            }
+                list_game: []
+            },
+            games: []
         }
     }
 
