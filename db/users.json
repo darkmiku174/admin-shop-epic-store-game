@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "61d40839262feac9f6a02745"
+  },
+  "name": "Nguyễn Văn C",
+  "phone_number": "0865506673",
+  "email": "cubo1431@gmail.com",
+  "birthday": {
+    "$date": "2021-06-09T14:37:48Z"
+  },
+  "user_name": "cubo142",
+  "password": "asdasd",
+  "status": false
+},{
+  "_id": {
+    "$oid": "61d40839262feac9f6a02746"
+  },
+  "name": "Nguyễn Văn A",
+  "phone_number": "0865506623",
+  "email": "dudu1441@gmail.com",
+  "birthday": {
+    "$date": "2021-07-09T14:37:48Z"
+  },
+  "user_name": "dudu245",
+  "password": "durandal444",
+  "status": false
+}]

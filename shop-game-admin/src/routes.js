@@ -5,12 +5,13 @@ import DetailGame from './components/game/game_detail';
 import CollectionManagement from './components/collection_management';
 import AddCollection from './components/collection/colllection_add';
 import DetailCollection from './components/collection/collection_detail';
-import UserManagement from './components/user_management';
 import VoucherManagement from './components/vocher_management';
 import OrderManagement from './components/order_management';
-import CartManagement from './components/cart_management';
 import DetailVocher from './components/vocher/vocher_detail';
 import AddVocher from './components/vocher/vocher_add';
+import DetailCart from './components/cart/cart_detail';
+import CartManagement from './components/cart_management';
+import UserManagement from './components/user_management copy';
 
 const routes = [
     {
@@ -72,6 +73,11 @@ const routes = [
         path: '/cart_management',
         exact: false,
         main: () => <CartManagement />
+    },
+    {
+        path: '/admin/cart/:id',
+        exact: false,
+        main: ({ match }) => <DetailCart match={match} />
     },
 ];
 

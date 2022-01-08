@@ -1,82 +1,114 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
-import { Button, Table, Container, Modal, Card } from 'react-bootstrap';
+import axios from 'axios';
+import { Link } from 'react-router-dom'
+import { FaEdit } from 'react-icons/fa';
+import { Button, Table, Container, Card } from 'react-bootstrap';
 class CartManagement extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            carts: [],
+            cart: {
+                products: []
+            },
             show: false
         }
     }
 
-    handleClose = () => {
-        this.setState({
-            show: false
+    componentDidMount() {
+        //kết nối carts
+        axios({
+            method: 'GET',
+            url: 'http://localhost:5000/api/carts',
+            data: null
+        }).then(res => {
+            console.log(res);
+            this.setState({
+                carts: res.data
+            });
+        }).catch(err => {
+            console.log(err);
         })
-    };
-    handleShow = () => {
-        this.setState({
-            show: true
+        //
+        axios({
+            method: 'GET',
+            url: 'http://localhost:5000/api/games',
+            data: null
+        }).then(res => {
+            console.log(res);
+            this.setState({
+                products: res.data
+            });
+        }).catch(err => {
+            console.log(err);
         })
-    };
+    }
+
+
+    showCarts(carts) {
+        var result = null;
+        if (carts.length > 0) {
+            result = carts.map((cart, index) => {
+                return (
+                    <tr>
+                        <td>{cart._id}</td>
+                        <td>{cart.user._id}</td>
+                        <td>
+                            {this.showQuantity(cart.products)}
+                        </td>
+                        <td>{cart.status.toString()}</td>
+                        <td>
+                        <Link to={"/admin/cart/" + cart._id}>
+                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                            </Link>
+                        </td>
+                    </tr>
+                )
+            });
+        }
+        return result;
+    }
+
+
+    showQuantity(product) {
+        var result = null;
+        if (product.length > 0) {
+            result = product.map((p, index) => {
+                return (
+                    <h6>{p.quantity}</h6>
+                )
+            });
+        }
+        return result
+    }
+
     render() {
-        var { show } = this.state;
+        var { carts } = this.state;
         return (
-            <Container>
-                <div style={{ backgroundColor: '#3ac9c9' }}>
+            <>
+                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Cart</p>
                 </div>
-                <Card className="table-container">
-                    <Table className="normal-table" bordered hover responsive="sm">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Id</th>
-                                <th>User</th>
-                                <th>List game</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>
-                                    <Button variant="secondary" onClick={this.handleShow}>
-                                        Show list
-                                    </Button>
-                                    <Modal show={show} onHide={this.handleClose}>
-                                        <Modal.Header closeButton>
-                                            <Modal.Title>List Game details</Modal.Title>
-                                        </Modal.Header>
-                                        <Modal.Body>
-                                            <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button>
-                                            <Table bordered hover responsive="sm" className="listgame-details">
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>Game's name</th>
-                                                        <th>Quantity</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td></td>
-                                                        <td>Assassin</td>
-                                                        <td>2</td>
-                                                    </tr>
-                                                </tbody>
-                                            </Table>
-                                        </Modal.Body>
-                                    </Modal>
-                                </td>
-                                <td>Table cell</td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </Card>
-            </Container>
+                <Container>
+                    <Card className="table-container">
+                        <Table className="normal-table" bordered hover responsive="sm">
+                            <thead>
+                                <tr>
+                                    <th>Cart ID</th>
+                                    <th>User ID</th>
+                                    <th>Số lượng game mua</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.showCarts(carts)}
+                            </tbody>
+                        </Table>
+                    </Card>
+                </Container>
+            </>
         )
     }
 }

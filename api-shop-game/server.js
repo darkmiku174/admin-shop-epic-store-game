@@ -8,6 +8,10 @@ import bodyParser from "body-parser"
 import gameRoutes from "./routes/gameRoutes.js";
 import collectionRoutes from './routes/collectionRoutes.js'
 import vocherRoutes from './routes/vocherRoutes.js'
+import userRoutes from "./routes/userRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+
+
 
 dotenv.config();
 
@@ -31,6 +35,8 @@ app.get("/", (req, res) => {
 app.use("/api/games", gameRoutes)
 app.use("/api/collections", collectionRoutes)
 app.use("/api/vochers", vocherRoutes)
+app.use("/api/users", userRoutes)
+app.use("/api/carts", cartRoutes)
 
 const PORT = process.env.PORT || 5000;
 
