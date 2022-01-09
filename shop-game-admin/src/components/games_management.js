@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button, Table, Container } from 'react-bootstrap';
+import { Row, Button, Table, Container, Card } from 'react-bootstrap';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from "axios";
@@ -19,7 +19,6 @@ class GamesManagement extends Component {
             url: 'http://localhost:5000/api/games',
             data: null
         }).then(res => {
-            console.log(res);
             this.setState({
                 products: res.data
             });
@@ -70,39 +69,41 @@ class GamesManagement extends Component {
     render() {
         var { products } = this.state
         return (
-            <Container>
-                <div style={{ backgroundColor: '#3ac9c9' }}>
+            <>
+                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Quản lý sản phẩm</p>
                 </div>
                 <Container>
-                    <div style={{ backgroundColor: 'white' }}>
-                        <Link to="/admin/add_game">
-                            <Button variant="secondary" style={{ float: 'right', width: '5rem' }}> Thêm</Button>
-                        </Link>
-                        <Table bordered hover style={{ backgroundColor: 'white', fontSize: '12px' }}>
-                            <thead>
-                                <tr>
-                                    <th style={{ fontSize: '13px' }}>Tên sản phẩm</th>
-                                    <th style={{ fontSize: '13px' }}>Loại</th>
-                                    <th style={{ fontSize: '13px' }}>Nhà phát triển</th>
-                                    <th style={{ fontSize: '13px' }}>Nhà phát hành</th>
-                                    <th style={{ fontSize: '13px' }}>Ngày xuất bản</th>
-                                    <th style={{ fontSize: '13px' }}>Hệ điều hành</th>
-                                    <th style={{ fontSize: '13px' }}>Giá mua</th>
-                                    <th style={{ fontSize: '13px' }}>Giá bán</th>
-                                    <th style={{ fontSize: '13px' }}>Kho</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.showProducts(products)}
-                            </tbody>
-                        </Table>
-                        <Row style={{ marginTop: '1rem', float: 'right' }}>
-                            {/* <Pagination count={10} /> */}
-                        </Row>
-                    </div>
+                    <Card style={{ padding: '2rem' }}>
+                        <div style={{ backgroundColor: 'white' }}>
+                            <Link to="/admin/add_game">
+                                <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
+                            </Link>
+                            <Table bordered hover style={{ backgroundColor: 'white', fontSize: '13px' }}>
+                                <thead>
+                                    <tr>
+                                        <th style={{ fontSize: '13px' }}>Tên sản phẩm</th>
+                                        <th style={{ fontSize: '13px' }}>Loại</th>
+                                        <th style={{ fontSize: '13px' }}>Nhà phát triển</th>
+                                        <th style={{ fontSize: '13px' }}>Nhà phát hành</th>
+                                        <th style={{ fontSize: '13px' }}>Ngày xuất bản</th>
+                                        <th style={{ fontSize: '13px' }}>Hệ điều hành</th>
+                                        <th style={{ fontSize: '13px' }}>Giá mua</th>
+                                        <th style={{ fontSize: '13px' }}>Giá bán</th>
+                                        <th style={{ fontSize: '13px' }}>Kho</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.showProducts(products)}
+                                </tbody>
+                            </Table>
+                            <Row style={{ marginTop: '1rem', float: 'right' }}>
+                                {/* <Pagination count={10} /> */}
+                            </Row>
+                        </div>
+                    </Card>
                 </Container>
-            </Container>
+            </>
         )
     }
 }

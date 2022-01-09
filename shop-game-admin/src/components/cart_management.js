@@ -23,7 +23,6 @@ class CartManagement extends Component {
             url: 'http://localhost:5000/api/carts',
             data: null
         }).then(res => {
-            console.log(res);
             this.setState({
                 carts: res.data
             });
@@ -36,7 +35,6 @@ class CartManagement extends Component {
             url: 'http://localhost:5000/api/games',
             data: null
         }).then(res => {
-            console.log(res);
             this.setState({
                 products: res.data
             });
@@ -59,7 +57,7 @@ class CartManagement extends Component {
                         </td>
                         <td>{cart.status.toString()}</td>
                         <td>
-                        <Link to={"/admin/cart/" + cart._id}>
+                            <Link to={"/admin/cart/" + cart._id}>
                                 <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                         </td>
@@ -90,7 +88,10 @@ class CartManagement extends Component {
                 <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Cart</p>
                 </div>
-                <Container>
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                    <Link to="/admin/add_game">
+                        <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
+                    </Link>
                     <Card className="table-container">
                         <Table className="normal-table" bordered hover responsive="sm">
                             <thead>
@@ -107,7 +108,7 @@ class CartManagement extends Component {
                             </tbody>
                         </Table>
                     </Card>
-                </Container>
+                </Card>
             </>
         )
     }

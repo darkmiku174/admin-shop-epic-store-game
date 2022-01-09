@@ -10,6 +10,7 @@ import collectionRoutes from './routes/collectionRoutes.js'
 import vocherRoutes from './routes/vocherRoutes.js'
 import userRoutes from "./routes/userRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 
 
@@ -37,6 +38,7 @@ app.use("/api/collections", collectionRoutes)
 app.use("/api/vochers", vocherRoutes)
 app.use("/api/users", userRoutes)
 app.use("/api/carts", cartRoutes)
+app.use("/api/orders", orderRoutes)
 
 const PORT = process.env.PORT || 5000;
 

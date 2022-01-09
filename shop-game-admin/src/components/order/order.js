@@ -1,61 +1,63 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom'
 import React, { Component } from 'react';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaEdit } from 'react-icons/fa';
+import axios from "axios";
 import { Button, Table, Container } from 'react-bootstrap';
 class Order extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false
+
+
+    showOrders(orders) {
+        var result = null;
+        if (orders.length > 0) {
+            result = orders.map((order, index) => {
+                return (
+                    <tr>
+                        <td>{order._id}</td>
+                        <td>{order.cart._id}</td>
+                        <td>{order.paid_at}</td>
+                        <td>{order.user._id}</td>
+                        <td>{order.payment_method.method}</td>
+                        <td>{order.status.toString()}</td>
+                        <td>{order.cancelled_at}</td>
+                        <td><FaTrash />
+                            <Link to={"/admin/order/" + order._id}>
+                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                            </Link>
+                        </td>
+                    </tr>
+                )
+            });
         }
+        return result;
     }
 
-    handleClose = () => {
-        this.setState({
-            show: false
-        })
-    };
-    handleShow = () => {
-        this.setState({
-            show: true
-        })
-    };
-
     render() {
-        var { show } = this.state
+        var { orders } = this.props;
+        console.log(orders)
         return (
             <Container>
                 <Container className="table-container">
                     <Button style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
-                    <Table className="normal-table" bordered hover responsive="sm">
+                    <Table className="normal-table" bordered hover responsive="lg" style={{ fontSize: '13px' }}>
                         <thead>
                             <tr>
-                                <th></th>
                                 <th>Id</th>
-                                <th>Cart</th>
+                                <th>Cart ID</th>
                                 <th>Paid at</th>
+                                <th>User</th>
                                 <th>Payment Method</th>
                                 <th>Status</th>
                                 <th>Cancel at</th>
-
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td>Table cell</td>
-                                <td><FaTrash /></td>
-                            </tr>
+                            {this.showOrders(orders)}
                         </tbody>
                     </Table>
                 </Container>
             </Container>
         )
     }
-
 }
 export default Order;

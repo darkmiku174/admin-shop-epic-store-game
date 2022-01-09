@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Button, Table, Container, Card } from 'react-bootstrap';
-import {  FaEdit } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import DeleteCollectiontNotification from './notification/delete_collection_notification';
@@ -55,28 +55,30 @@ class CollectionManagement extends Component {
     render() {
         var { collections } = this.state
         return (
-            <Container>
-                <div style={{ backgroundColor: '#3ac9c9' }}>
+            <>
+                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Collection</p>
                 </div>
-                <Card className="table-container">
-                    <Link to="/admin/add_collection">
-                    <Button variant="secondary" style={{ float: 'right', width: '5rem', marginBottom: '1rem' }}>Thêm +</Button>
+                <Container style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column' }}>
+                    <Link to="/admin/add_collection" style={{width:'auto'}}>
+                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
                     </Link>
-                    <Table className="normal-table" bordered hover responsive="sm">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Id</th>
-                                <th>Name</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.showCollections(collections)}
-                        </tbody>
-                    </Table>
-                </Card>
-            </Container>
+                    <Card className="table-container">
+                        <Table className="normal-table" bordered hover responsive="sm">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.showCollections(collections)}
+                            </tbody>
+                        </Table>
+                    </Card>
+                </Container>
+            </>
         )
     }
 

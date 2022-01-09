@@ -12,6 +12,7 @@ import AddVocher from './components/vocher/vocher_add';
 import DetailCart from './components/cart/cart_detail';
 import CartManagement from './components/cart_management';
 import UserManagement from './components/user_management copy';
+import DetailOrder from './components/order/order_detail';
 
 const routes = [
     {
@@ -68,6 +69,11 @@ const routes = [
         path: '/order_management',
         exact: false,
         main: () => <OrderManagement />
+    },
+    {
+        path: '/admin/order/:id',
+        exact: false,
+        main: ({ match }) => <DetailOrder match={match} />
     },
     {
         path: '/cart_management',
