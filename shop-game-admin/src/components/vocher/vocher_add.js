@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button,Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -68,75 +68,71 @@ class AddVocher extends Component {
         const { history } = this.props;
         return (
             (history) ? <div>
-                <Container>
+                <Container style={{marignTop:'1rem'}}>
                     <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
                         <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm bộ sưu tập</p>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
+                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
                             {/*Parent Row 1*/}
-                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', border: '1px solid black', padding: '1rem' }}>
-                                <h5>Thêm bộ sưu tập</h5>
+                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
+                                <h5>Thêm voucher</h5>
                                 <Container style={{ marginTop: '3rem' }}>
                                     <Col>
                                         <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
                                             <div className="product-details-table">
                                                 <Table striped bordered style={{ width: '54rem' }}>
                                                     <thead>
-                                                        <tr>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th></th>
-                                                        </tr>
+
                                                     </thead>
                                                     <tbody>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>1</td>
                                                             <td style={{ padding: '5px' }}>Mã vocher</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="code" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="code" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>2</td>
                                                             <td style={{ padding: '5px' }}>Giảm giá</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="discount" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="discount" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>3</td>
                                                             <td style={{ padding: '5px' }}>Loại vocher</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="type" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="type" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>4</td>
                                                             <td style={{ padding: '5px' }}>Ngày tạo</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="create_date" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="create_date" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>5</td>
                                                             <td style={{ padding: '5px' }}>Ngày hết hạn</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="time_expired" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="time_expired" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>6</td>
                                                             <td style={{ padding: '5px' }}>Số lượng</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="count" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="count" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>7</td>
                                                             <td style={{ padding: '5px' }}>Trạng thái</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="status" onChange={this.onChange} />
+                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="status" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
@@ -145,14 +141,15 @@ class AddVocher extends Component {
                                                             <AddVocherListGame list_game={vocher.list_game} games={games} />
                                                         </tr>
                                                     </tbody>
-                                                    <Button onClick={() => this.onAdd(vocher)}>Thêm</Button>
+
                                                 </Table>
+                                                <Button variant="secondary" style={{ float: 'right' }} onClick={() => this.onAdd(vocher)}>Thêm</Button>
                                             </div>
                                         </div>
                                     </Col>
                                 </Container>
                             </Row>
-                        </Container>
+                        </Card>
                     </div>
                 </Container>
             </div> : null

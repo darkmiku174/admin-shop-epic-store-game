@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import axios from "axios";
 import DeleteUserNotification from './notification/delete_user_notification';
-import { Button, Table, Container } from 'react-bootstrap';
+import { Button, Table, Container, Card } from 'react-bootstrap';
 class UserManagement extends Component {
     constructor(props) {
         super(props);
@@ -57,10 +57,10 @@ class UserManagement extends Component {
                 <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>User</p>
                 </div>
-                <Container>
+                <Card>
                     <Container className="table-container">
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm +</Button>
-                        <Table className="normal-table" bordered hover responsive="sm">
+                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button>
+                        <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -79,7 +79,7 @@ class UserManagement extends Component {
                             </tbody>
                         </Table>
                     </Container>
-                </Container>
+                </Card>
             </>
         )
     }

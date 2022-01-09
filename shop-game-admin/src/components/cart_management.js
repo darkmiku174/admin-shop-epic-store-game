@@ -51,10 +51,7 @@ class CartManagement extends Component {
                 return (
                     <tr>
                         <td>{cart._id}</td>
-                        <td>{cart.user._id}</td>
-                        <td>
-                            {this.showQuantity(cart.products)}
-                        </td>
+                        <td>{cart.user.name}</td>
                         <td>{cart.status.toString()}</td>
                         <td>
                             <Link to={"/admin/cart/" + cart._id}>
@@ -89,17 +86,16 @@ class CartManagement extends Component {
                     <p style={{ color: 'white', fontSize: '23px' }}>Cart</p>
                 </div>
                 <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
-                    <Link to="/admin/add_game">
-                        <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
-                    </Link>
-                    <Card className="table-container">
-                        <Table className="normal-table" bordered hover responsive="sm">
+                    <Container className="table-container">
+                        <Link to="/admin/add_game">
+                            <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
+                        </Link>
+                        <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
                                 <tr>
                                     <th>Cart ID</th>
-                                    <th>User ID</th>
-                                    <th>Số lượng game mua</th>
-                                    <th>Status</th>
+                                    <th>Tên User</th>
+                                    <th>Tình trạng</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -107,7 +103,7 @@ class CartManagement extends Component {
                                 {this.showCarts(carts)}
                             </tbody>
                         </Table>
-                    </Card>
+                    </Container>
                 </Card>
             </>
         )

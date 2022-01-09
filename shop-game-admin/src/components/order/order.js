@@ -14,13 +14,13 @@ class Order extends Component {
                 return (
                     <tr>
                         <td>{order._id}</td>
-                        <td>{order.cart._id}</td>
                         <td>{order.paid_at}</td>
-                        <td>{order.user._id}</td>
+                        <td>{order.user.name}</td>
                         <td>{order.payment_method.method}</td>
                         <td>{order.status.toString()}</td>
                         <td>{order.cancelled_at}</td>
-                        <td><FaTrash />
+                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
+                            <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaTrash /></Button>
                             <Link to={"/admin/order/" + order._id}>
                                 <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
@@ -38,12 +38,11 @@ class Order extends Component {
         return (
             <Container>
                 <Container className="table-container">
-                    <Button style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
+                    <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button>
                     <Table className="normal-table" bordered hover responsive="lg" style={{ fontSize: '13px' }}>
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Cart ID</th>
                                 <th>Paid at</th>
                                 <th>User</th>
                                 <th>Payment Method</th>

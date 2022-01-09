@@ -59,23 +59,25 @@ class CollectionManagement extends Component {
                 <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Collection</p>
                 </div>
-                <Container style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column' }}>
-                    <Link to="/admin/add_collection" style={{width:'auto'}}>
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
-                    </Link>
-                    <Card className="table-container">
-                        <Table className="normal-table" bordered hover responsive="sm">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.showCollections(collections)}
-                            </tbody>
-                        </Table>
+                <Container>
+                    <Card style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
+                        <Container className="table-container">
+                            <Link to="/admin/add_collection" style={{ width: 'auto' }}>
+                                <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
+                            </Link>
+                            <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Collection ID</th>
+                                        <th>Tên Collection</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.showCollections(collections)}
+                                </tbody>
+                            </Table>
+                        </Container>
                     </Card>
                 </Container>
             </>

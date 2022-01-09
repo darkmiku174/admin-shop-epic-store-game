@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
+import { Container, Tab, Tabs } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Order from './order/order';
 import axios from "axios";
@@ -8,7 +8,7 @@ class OrderManagement extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            order:{},
+            order: {},
             check: 0,
             old: [],
             orders: []
@@ -31,7 +31,7 @@ class OrderManagement extends Component {
     }
 
     customOrders(check) {
-        var {  old } = this.state
+        var { old } = this.state
         if (check === 0) {
             this.setState({
                 orders: old
@@ -99,12 +99,12 @@ class OrderManagement extends Component {
     render() {
         var { check, orders } = this.state
         return (
-            <>
-                <div style={{ backgroundColor: '#3ac9c9',height:'56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px'}}>Order</p>
+            <div>
+                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
+                    <p style={{ color: 'white', fontSize: '23px' }}>Order</p>
                 </div>
-                <Card style={{ padding: '1rem' }}>
-                    <Card style={{ width: '70rem', margin: 'auto', padding: '1rem' }}>
+                <Card>
+                    <Container>
                         <Tabs defaultActiveKey="tatca" id="uncontrolled-tab-example" className="mb-3" onSelect={this.onChange}>
                             <Tab eventKey="tatca" title="Tất cả">
                                 {check === 0 && orders.length > 0 ? <Order key={0} check={check} orders={orders} /> : null}
@@ -119,9 +119,9 @@ class OrderManagement extends Component {
                                 {check === 3 && orders.length > 0 ? <Order key={3} check={check} orders={orders} /> : null}
                             </Tab>
                         </Tabs>
-                    </Card>
+                    </Container>
                 </Card>
-            </>
+            </div>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Form, Table } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Table, Card } from 'react-bootstrap';
 import Key from './games_add_key';
 import Tag from './games_add_tag';
 import Include from './games_add_include';
@@ -187,14 +187,14 @@ class AddGame extends Component {
 		const { history } = this.props;
 		return (
 			(history) ? <div>
-				<Container>
-					<div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-						<p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm sản phẩm</p>
-					</div>
+				<div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', height: '56px' }}>
+					<p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm sản phẩm</p>
+				</div>
+				<Container style={{ padding: '2rem' }}>
 					<div style={{ display: 'flex', flexDirection: 'column' }}>
-						<Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
+						<Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
 							{/*Parent Row 1*/}
-							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', border: '1px solid black', padding: '1rem' }}>
+							<Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
 								<h5>Thông tin chung</h5>
 								<Container style={{ marginTop: '3rem' }}>
 									<Col>
@@ -202,69 +202,62 @@ class AddGame extends Component {
 											<div className="product-details-table">
 												<Table striped bordered style={{ width: '30rem' }}>
 													<thead>
-														<tr>
-															<th></th>
-															<th></th>
-															<th></th>
-
-														</tr>
 													</thead>
 													<tbody>
-
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>1</td>
-															<td style={{ padding: '5px' }}>Name</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="name" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Tên</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="name" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>2</td>
-															<td style={{ padding: '5px' }}>Short name</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="short_name" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Tên ngắn</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="short_name" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>3</td>
-															<td style={{ padding: '5px' }}>Type</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="type" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Thể loại</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="type" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>4</td>
-															<td style={{ padding: '5px' }}>Title</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="title" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Tiêu đề</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="title" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>5</td>
-															<td style={{ padding: '5px' }}>Description</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="description" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Mô tả</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="description" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>6</td>
-															<td style={{ padding: '5px' }}>Developer</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="developer" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Nhà phát triển</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="developer" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>7</td>
-															<td style={{ padding: '5px' }}>Publisher</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="publisher" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Nhà phát hành</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="publisher" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>8</td>
-															<td style={{ padding: '5px' }}>Release date</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="release_date" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Ngày ra mắt</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="release_date" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>9</td>
-															<td style={{ padding: '5px' }}>Platform</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="platform" size="sm" type="text" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Nền tảng</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="platform" size="sm" type="text" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>10</td>
-															<td style={{ padding: '5px' }}>Purchase price</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="purchase_price" size="sm" type="number" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Giá mua</td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="purchase_price" size="sm" type="number" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>11</td>
-															<td style={{ padding: '5px' }}>Sale price</td>
-															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} onChange={this.onChange} name="sale_price" size="sm" type="number" placeholder="Nhập vào" /></td>
+															<td style={{ padding: '5px' }}>Giá bán </td>
+															<td style={{ padding: '0px' }}><Form.Control style={{ width: '100%', height: '3rem' }} onChange={this.onChange} name="sale_price" size="sm" type="number" placeholder="Nhập vào" /></td>
 														</tr>
 														<tr className="tr-edit">
 															<td style={{ padding: '5px' }}>12</td>
@@ -304,7 +297,7 @@ class AddGame extends Component {
 								</Container>
 							</Row>
 							{/*Parent Row 2 */}
-							<Row style={{ display: "flex", margin: '0.2rem', border: '1px solid black', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
+							<Row style={{ display: "flex", margin: '0.2rem', marginBottom: '1rem', padding: '1rem' }}>
 								<p style={{ fontSize: '12px' }}>Videos</p>
 								<Button variant="secondary" style={{ width: '3rem', margin: '0.6rem' }} onClick={() => this.onAddVideo(product.videos)}>+</Button>
 								<Row>
@@ -312,16 +305,16 @@ class AddGame extends Component {
 								</Row>
 							</Row>
 							{/*Parent Row 3 */}
-							<Row style={{ display: "flex", margin: '0.2rem', border: '1px solid black', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
+							<Row style={{ display: "flex", margin: '0.2rem', marginBottom: '1rem', padding: '1rem' }}>
 								<p style={{ fontSize: '12px' }}>Hình ảnh</p>
 								<Button variant="secondary" style={{ width: '3rem', margin: '0.6rem' }} onClick={() => this.onAddImage(product.images)}>+</Button>
 								<Row>
 									{this.showImages(product.images)}
 								</Row>
 							</Row>
-						</Container>
+							<Button variant="secondary" style={{ marginLeft: '50rem', width: '5rem' }} onClick={() => this.onAdd(product)}>Thêm</Button>
+						</Card>
 					</div>
-					<Button onClick={() => this.onAdd(product)}>Thêm</Button>
 				</Container>
 			</div> : null
 		)

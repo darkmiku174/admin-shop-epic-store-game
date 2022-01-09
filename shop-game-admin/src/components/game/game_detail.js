@@ -147,10 +147,10 @@ class DetailGame extends Component {
         var { product } = this.state
         return (
             <div>
+                <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem',height:'56px' }}>
+                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết sản phẩm</p>
+                </div>
                 <Container>
-                    <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết sản phẩm</p>
-                    </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
                             {/*Parent Row 1*/}

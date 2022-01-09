@@ -11,7 +11,7 @@ import DetailVocher from './components/vocher/vocher_detail';
 import AddVocher from './components/vocher/vocher_add';
 import DetailCart from './components/cart/cart_detail';
 import CartManagement from './components/cart_management';
-import UserManagement from './components/user_management copy';
+import UserManagement from './components/user_management';
 import DetailOrder from './components/order/order_detail';
 
 const routes = [

@@ -49,7 +49,7 @@ class Tag extends Component {
                 return (
                     <tr className="tr-edit">
                         <td style={{ padding: '5px' }}>{index + 1}</td>
-                        <td style={{ padding: '0px' }}><Form.Control style={{ width: '100%' }} name={index} size="sm" type="text" value={this.showTag(tag)} placeholder="Nhập vào" onChange={this.onChange} /></td>
+                        <td style={{ padding: '0px' }}><Form.Control style={{ width: '100%',height:"3rem" }} name={index} size="sm" type="text" value={this.showTag(tag)} placeholder="Nhập vào" onChange={this.onChange} /></td>
                         <td>
                             <button onClick={() => this.onDeleteRow(index)} ><FaTrash /></button>
                         </td>
@@ -87,11 +87,11 @@ class Tag extends Component {
         return (
             <>
                 <Button onClick={this.handleShow} className="selected-btn" variant="secondary" style={{ width: '10rem' }}>
-                    Tag details
+                    Chi tiết tags
                 </Button>
                 <Modal show={show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Tag list</Modal.Title>
+                        <Modal.Title>Danh sách tag</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={this.onAddRow} >Thêm</Button>
@@ -99,7 +99,7 @@ class Tag extends Component {
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>Tags name</th>
+                                    <th>Tên Tags</th>
                                 </tr>
                             </thead>
                             <tbody>

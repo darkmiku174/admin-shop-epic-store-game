@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col, Table, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 class DetailCollection extends Component {
@@ -36,7 +36,7 @@ class DetailCollection extends Component {
             result = products.map((product, index) => {
                 return (
                     <tr className="tr-edit">
-                        <td style={{ padding: '5px' }}>{index+1}</td>
+                        <td style={{ padding: '5px' }}>{index + 1}</td>
                         <td style={{ padding: '0px' }}>{product.name}</td>
                     </tr>
                 )
@@ -49,61 +49,39 @@ class DetailCollection extends Component {
         var { collection } = this.state
         return (
             <div>
+                <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', height: '56px', paddingBottom: '1rem' }}>
+                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết collection</p>
+                </div>
                 <Container>
-                    <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết collection</p>
-                    </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
-                            {/*Parent Row 1*/}
-                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', border: '1px solid black', padding: '1rem' }}>
+                            <Card style={{padding:'2rem',width:'30rem'}}>
                                 <h5>Thông tin Collection</h5>
-                                <h6>{collection._id}</h6>
-                                <Container style={{ marginTop: '3rem' }}>
-                                    <Col>
-                                        <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <div className="product-details-table">
-                                                <Table striped bordered style={{ width: '54rem' }}>
-                                                    <thead>
-                                                        <tr>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>1</td>
-                                                            <td style={{ padding: '5px' }}>Name Collection</td>
-                                                            <td style={{ padding: '0px' }}>{collection.name}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>2</td>
-                                                            <td style={{ padding: '5px' }}>List Game</td>
-                                                            <Table bordered hover responsive="sm" className="listgame-details">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th></th>
-                                                                        <th>Games name</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
+                                <h6>Collection ID: {collection._id}</h6>
+                                <h6>Tên Collection: {collection.name}</h6>
+                                <Row style={{marginTop: '1rem', marginBottom: '1rem' }}>
+                                    <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div className="product-details-table">
+                                            <Table style={{width:"25rem"}} bordered hover responsive="lg" className="listgame-details">
+                                                <thead>
+                                                    <tr>
+                                                        <th>STT</th>
+                                                        <th>Tên game</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
 
-                                                                    {this.showProducts(collection.list_game)}
-                                                                </tbody>
-                                                            </Table>
-                                                        </tr>
-                                                    </tbody>
-                                                </Table>
-                                            </div>
+                                                    {this.showProducts(collection.list_game)}
+                                                </tbody>
+                                            </Table>
                                         </div>
-                                    </Col>
-                                </Container>
-                            </Row>
+                                    </div>
+                                </Row>
+                            </Card>
                         </Container>
                     </div>
-                </Container>
-            </div>
+                </Container >
+            </div >
         )
     }
 }

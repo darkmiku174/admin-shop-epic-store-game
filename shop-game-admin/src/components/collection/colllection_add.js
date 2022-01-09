@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Table, Button } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddListGame from './collection_add_listgame';
 import axios from 'axios';
@@ -62,48 +62,43 @@ class AddCollection extends Component {
         const { history } = this.props;
         return (
             (history) ? <div>
-                <Container>
-                    <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm bộ sưu tập</p>
-                    </div>
+                <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', height: '56px' }}>
+                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm bộ sưu tập</p>
+                </div>
+                <Container style={{ margin: 'auto' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
-                            {/*Parent Row 1*/}
-                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', border: '1px solid black', padding: '1rem' }}>
+                        {/*Parent Row 1*/}
+
+                        <Container>
+                            <Card style={{ width: '30rem', padding: '2rem', margin: 'auto', marginTop: '1rem' }}>
                                 <h5>Thêm bộ sưu tập</h5>
-                                <Container style={{ marginTop: '3rem' }}>
-                                    <Col>
-                                        <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <div className="product-details-table">
-                                                <Table striped bordered style={{ width: '54rem' }}>
-                                                    <thead>
-                                                        <tr>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>1</td>
-                                                            <td style={{ padding: '5px' }}>Tên</td>
-                                                            <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px' }} type="text" id="fname" name="firstname" name="name" onChange={this.onChange} />
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>2</td>
-                                                            <td style={{ padding: '5px' }}>Danh sách game</td>
-                                                            <AddListGame list_game={collection.list_game} games={games} />
-                                                        </tr>
-                                                    </tbody>
-                                                    <Button onClick={() => this.onAdd(collection)}>Thêm</Button>
-                                                </Table>
+                                <Col>
+                                    <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div className="product-details-table">
+                                            <div>
+                                                <Row>
+                                                    <Col sm="7">
+                                                        Nhập tên Collection
+                                                    </Col>
+                                                    <Col sm="5">
+                                                        <input style={{ width: "10rem", height: '2rem' }} type="text" id="fname" name="firstname" name="name" onChange={this.onChange} />
+                                                    </Col>
+                                                </Row>
+                                                <Row style={{ marginTop: '1rem' }}>
+                                                    <Col sm="7">
+                                                        Thêm vào Collection
+                                                    </Col>
+                                                    <Col sm="5">
+                                                        <AddListGame list_game={collection.list_game} games={games} />
+                                                    </Col>
+                                                    
+                                                </Row>
+                                                <Button style={{ width: '5rem',  marginTop: '1rem' }} onClick={() => this.onAdd(collection)}>Thêm</Button>
                                             </div>
                                         </div>
-                                    </Col>
-                                </Container>
-                            </Row>
+                                    </div>
+                                </Col>
+                            </Card>
                         </Container>
                     </div>
                 </Container>

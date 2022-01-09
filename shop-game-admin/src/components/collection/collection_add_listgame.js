@@ -93,12 +93,12 @@ class AddListGame extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(game)}>Thêm</Button>
-                        <SearchBar placeholder="Enter a Book Name..." data={games} onChange={this.onChange} />
+                        <SearchBar placeholder="Nhập tên game" data={games} onChange={this.onChange} />
                         <Table bordered hover responsive="sm" className="listgame-details">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Game's name</th>
+                                    <th>Tên game</th>
                                     <th></th>
                                 </tr>
                             </thead>

@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { FaEdit } from 'react-icons/fa';
-import { Button, Table, Container } from 'react-bootstrap';
+import { Button, Table, Container,Card } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 class VoucherManagement extends Component {
@@ -58,35 +58,37 @@ class VoucherManagement extends Component {
     render() {
         var { vochers } = this.state
         return (
-            <Container>
-                <div style={{ backgroundColor: '#3ac9c9' }}>
+            <>
+                <div style={{ backgroundColor: '#3ac9c9',height:'56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>Voucher</p>
                 </div>
-                <Container className="table-container">
-                    <Link to="/admin/add_vocher">
-                        <Button style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
-                    </Link>
-                    <Table className="normal-table" bordered hover responsive="sm">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Id</th>
-                                <th>Code</th>
-                                <th>Discount</th>
-                                <th>Type</th>
-                                <th>Count</th>
-                                <th>Create date</th>
-                                <th>Time expired</th>
-                                <th>Status</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.showVochers(vochers)}
-                        </tbody>
-                    </Table>
-                </Container>
-            </Container>
+                <Card>
+                    <Container className="table-container">
+                        <Link to="/admin/add_vocher">
+                            <Button style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
+                        </Link>
+                        <Table className="normal-table" bordered hover responsive="sm" style={{fontSize:'13px'}}>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Id</th>
+                                    <th>Code</th>
+                                    <th>Discount</th>
+                                    <th>Type</th>
+                                    <th>Count</th>
+                                    <th>Create date</th>
+                                    <th>Time expired</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.showVochers(vochers)}
+                            </tbody>
+                        </Table>
+                    </Container>
+                </Card>
+            </>
         )
     }
 }

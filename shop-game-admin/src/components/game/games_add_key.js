@@ -85,11 +85,11 @@ class Key extends Component {
         return (
             <>
                 <Button onClick={this.handleShow} className="selected-btn" variant="secondary" style={{ width: '10rem' }}>
-                    Key details
+                    Chi tiết keys
                 </Button>
                 <Modal show={show} onHide={this.handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Key list</Modal.Title>
+                        <Modal.Title>Danh sách key</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Row className='row-1'>
@@ -112,7 +112,7 @@ class Key extends Component {
                             <thead>
                                 <tr>
                                     <th>Code</th>
-                                    <th>Stastus</th>
+                                    <th>Trạng thái</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -15,7 +15,7 @@ var orderSchema = new mongoose.Schema({
         detail: {}
     },
     paid_at: Date,
-    cancelled_at: Date
+    cancelled_at: Date,
 }, {
     versionKey: false
 })
