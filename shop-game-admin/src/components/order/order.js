@@ -19,11 +19,11 @@ class Order extends Component {
                         <td>{order.payment_method.method}</td>
                         <td>{order.status.toString()}</td>
                         <td>{order.cancelled_at}</td>
-                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaTrash /></Button>
+                        <td style={{ display: 'flex' }}>
                             <Link to={"/admin/order/" + order._id}>
-                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{ border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
+                            <Button style={{ marginLeft: '1rem' }}><FaTrash /></Button>
                         </td>
                     </tr>
                 )
@@ -43,11 +43,11 @@ class Order extends Component {
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Paid at</th>
+                                <th>Ngày thanh toán</th>
                                 <th>User</th>
-                                <th>Payment Method</th>
-                                <th>Status</th>
-                                <th>Cancel at</th>
+                                <th>Phương thức thanh toán</th>
+                                <th>Tình trạng</th>
+                                <th>Ngày hủy</th>
                             </tr>
                         </thead>
                         <tbody>

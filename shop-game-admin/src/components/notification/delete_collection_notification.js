@@ -42,7 +42,7 @@ class DeleteCollectiontNotification extends Component {
         var { data } = this.props
         return (
             <>
-                <Button onClick={this.handleShow} style={{ backgroundColor: 'black', border: '0px solid black' }} >
+                <Button onClick={this.handleShow} style={{  border: '0px solid black' }} >
                     <FaTrash />
                 </Button>
                 <Modal show={show} onHide={this.handleClose}>

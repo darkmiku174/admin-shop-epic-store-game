@@ -41,7 +41,7 @@ class UserManagement extends Component {
                         <td>{user.user_name}</td>
                         <td>{user.password}</td>
                         <td>{user.status.toString()}</td>
-                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <td style={{ display: 'flex' }}>
                             <DeleteUserNotification data={user._id} />
                         </td>
                     </tr>
@@ -54,24 +54,23 @@ class UserManagement extends Component {
         var { users } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>User</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px',padding:'0.5rem',paddingLeft:'5rem' }}>
+                    <p style={{ fontSize: '23px',fontFamily:'Roboto'}}>Quản lý người dùng</p>
                 </div>
-                <Card >
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
                     <Container style={{marginTop:'2rem'}} className="table-container">
-                        {/* <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button> */}
+                        {/* <Button  style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button> */}
                         <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Tên </th>
-                                    <th>SDT</th>
-                                    <th>Email</th>
                                     <th>Sinh nhật</th>
-                                    <th>Tên tài khoản</th>
-                                    <th>Password</th>
-                                    <th>Trạng thái</th>
-                                    <th>Action</th>
+                                    <th>Active</th>
+                                    <th>Email</th>
+                                    <th>SDT</th>
+                                    <th>Facebook ID</th>
+                                    <th>Email verification</th>
                                 </tr>
                             </thead>
                             <tbody>

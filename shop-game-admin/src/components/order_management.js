@@ -100,10 +100,10 @@ class OrderManagement extends Component {
         var { check, orders } = this.state
         return (
             <div>
-                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Order</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý Order</p>
                 </div>
-                <Card>
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
                     <Container>
                         <Tabs defaultActiveKey="tatca" id="uncontrolled-tab-example" className="mb-3" onSelect={this.onChange}>
                             <Tab eventKey="tatca" title="Tất cả">

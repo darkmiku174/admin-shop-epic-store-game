@@ -55,7 +55,7 @@ class CartManagement extends Component {
                         <td>{cart.status.toString()}</td>
                         <td>
                             <Link to={"/admin/cart/" + cart._id}>
-                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{  border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                         </td>
                     </tr>
@@ -82,13 +82,13 @@ class CartManagement extends Component {
         var { carts } = this.state;
         return (
             <>
-                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Cart</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý cart</p>
                 </div>
-                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
                     <Container className="table-container">
                         {/* <Link to="/admin/add_game">
-                            <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
+                            <Button  style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
                         </Link> */}
                         <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>

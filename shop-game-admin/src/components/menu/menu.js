@@ -72,13 +72,6 @@ class Menu extends Component {
                                         <span className="nav-text">REVENUE</span>
                                     </Link>
                                 </li>
-                                <li onClick={() => this.setActive("KEY")}>
-                                    <Link to="/key_management">
-                                        <i className="fa fa-key  " />
-                                        <span className="nav-text">KEY</span>
-                                    </Link>
-                                </li>
-
                             </ul>
                         </div>
                     </nav>
@@ -90,7 +83,6 @@ class Menu extends Component {
                     {active === "COLLECTION"}
                     {active === "USER"}
                     {active === "VOUCHER"}
-                    {active === "KEY"}
                     {active === "REVENUE"}
                 </div>
             </>

@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from './routes';
 import Menu from './components/menu/menu';
-import RevenueReport from './components/revenue_report/revenue_report';
-import KeyManagement from './components/key_management';
 class App extends Component {
 	render() {
 		return (

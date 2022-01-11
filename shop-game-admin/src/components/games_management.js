@@ -54,9 +54,9 @@ class GamesManagement extends Component {
                         <td>{product.purchase_price}</td>
                         <td>{product.sale_price}</td>
                         <td>{this.countActiveKeys(product.keys)}</td>
-                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <td style={{ display: 'flex' }}>
                             <Link to={"/admin/game/" + product._id}>
-                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{  marginRight:'1rem' }}><FaEdit /></Button>
                             </Link>
                             <DeleteProductNotification data={product._id} />
                         </td>
@@ -70,14 +70,14 @@ class GamesManagement extends Component {
         var { products } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Quản lý sản phẩm</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý sản phẩm</p>
                 </div>
                 <Container>
-                    <Card style={{ padding: '2rem' }}>
+                    <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
                         <div style={{ backgroundColor: 'white' }}>
                             <Link to="/admin/add_game">
-                                <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
+                                <Button  style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
                             </Link>
                             <Table bordered hover style={{ backgroundColor: 'white', fontSize: '13px' }}>
                                 <thead>

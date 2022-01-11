@@ -39,9 +39,9 @@ class CollectionManagement extends Component {
                         <td>{index + 1}</td>
                         <td>{collection._id}</td>
                         <td>{collection.name}</td>
-                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
-                            <Link to={"/admin/collection/" + collection._id}>
-                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                        <td style={{ display: 'flex' }}>
+                            <Link  style={{ marginRight: '1rem' }}  to={"/admin/collection/" + collection._id}>
+                                <Button  style={{  border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                             <DeleteCollectiontNotification data={collection._id} />
                         </td>
@@ -56,14 +56,14 @@ class CollectionManagement extends Component {
         var { collections } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Bộ sưu tập</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý bộ sưu tập</p>
                 </div>
                 <Container>
-                    <Card style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
+                    <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
                         <Container className="table-container">
                             <Link to="/admin/add_collection" style={{ width: 'auto' }}>
-                                <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm +</Button>
+                                <Button  style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button>
                             </Link>
                             <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                                 <thead>

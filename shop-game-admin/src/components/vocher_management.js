@@ -43,9 +43,9 @@ class VoucherManagement extends Component {
                         <td>{vocher.create_date}</td>
                         <td>{vocher.time_expired}</td>
                         <td>{vocher.status ? "Còn hạn" : "Hết hạn"}</td>
-                        <td style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <td style={{ display: 'flex' }}>
                             <Link to={"/admin/vocher/" + vocher._id}>
-                                <Button style={{ backgroundColor: 'black', border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{  border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                         </td>
                     </tr>
@@ -59,13 +59,13 @@ class VoucherManagement extends Component {
         var { vochers } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#3ac9c9',height:'56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Voucher</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px',padding:'0.5rem',paddingLeft:'5rem' }}>
+                <p style={{ fontSize: '23px',fontFamily:'Roboto'}}>Quản lý vocher</p>
                 </div>
-                <Card>
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
                     <Container className="table-container">
                         <Link to="/admin/add_vocher">
-                            <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
+                            <Button  style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
                         </Link>
                         <Table className="normal-table" bordered hover responsive="sm" style={{fontSize:'13px'}}>
                             <thead>
