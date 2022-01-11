@@ -45,7 +45,7 @@ class AddKey extends Component {
     render() {
         var { key } = this.state
         return (
-            <Card style={{ marginBottom: '1rem', marginTop: '1rem', width: '20rem' }}>
+            <Card style={{ marginBottom: '1rem', marginTop: '1rem'}}>
                 <Row className="parent-row" style={{ padding: '1rem' }}>
                     <Row>
                         <Col>

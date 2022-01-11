@@ -169,7 +169,7 @@ class DetailGame extends Component {
                                         <div style={{ margin: 'auto' }}>
                                             {/* Row 1 */}
                                             <Row style={{ width: '52rem' }}>
-                                                <Col lg="6" style={{ paddingRight: '1.2rem' }} >
+                                                <Col lg="6" style={{ paddingRight: '2rem' }} >
                                                     <Row>
                                                         <Card style={{ padding: "0rem" }}>
                                                             <Card.Header>Thông tin chung</Card.Header>
@@ -280,6 +280,7 @@ class DetailGame extends Component {
                                                         <Card style={{ padding: "0rem" }}>
                                                             <Card.Header>Key</Card.Header>
                                                             <Card.Body>
+                                                                <AddKey />
                                                                 <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
                                                                     <thead>
                                                                         <tr>

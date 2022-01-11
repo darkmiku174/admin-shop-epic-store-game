@@ -138,7 +138,7 @@ class AddVocher extends Component {
                                                             <td style={{ padding: '5px' }}>5</td>
                                                             <td style={{ padding: '5px' }}>Trạng thái</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <select style={{ height: '2rem', border: '1px solid #ced4da', borderRadius: '4px', marginLeft: "1rem" }}
+                                                                <select style={{ margin: '0px', width: '100%', height: '3rem' }}
                                                                     name="status"
                                                                     onChange={this.onChange}>
                                                                     <option value={false} onClick={() => this.onChange}>Inactive</option>
