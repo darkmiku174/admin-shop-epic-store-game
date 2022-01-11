@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.phantrang {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0 5rem;
+}
+
+ .phantrang li a {
+    border-radius: 3px;
+    padding: 0.3rem 1rem;
+    border: gray 1px solid;
+    cursor: pointer;
+  }
+  .phantrang li.previous a,
+  .phantrang li.next a,
+  .phantrang li.break a {
+    padding:0.3rem 0.5rem;
+  }
+  .phantrang li.active a {
+    background-color: #0B5ED7;
+    border-color: transparent;
+    color: white;
+    min-width: 32px;
+  }
+  .phantrang li.disabled a {
+    color: grey;
+  }
+  .phantrang li.disable,
+  .phantrang li.disabled a {
+    cursor: default;
+  }

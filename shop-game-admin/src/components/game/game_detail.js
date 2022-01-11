@@ -133,12 +133,16 @@ class DetailGame extends Component {
         if (images.length > 0) {
             result = images.map((image, index) => {
                 return (
-                    <Col className="image">
-                        <div className="image-container" style={{ display: 'flex', width: '25rem' }}>
-                            <form style={{ marginLeft: '1rem' }}>
-                                <img src={image.url} style={{ width: '25rem', height: '25rem' }} />
-                                <td>{image.type}</td>
-                            </form>
+                    <Col className="image" >
+                        <div className="image-container">
+                            <Card style={{ marginTop: '1rem' }}>
+                                <Card.Header>Loại ảnh: {image.type}</Card.Header>
+                                <Card.Body style={{ padding: "0px" }}>
+                                    <form>
+                                        <img src={image.url} style={{ width: '32rem', height: '20rem' }} />
+                                    </form>
+                                </Card.Body>
+                            </Card>
                         </div>
                     </Col>
                 )
@@ -152,147 +156,62 @@ class DetailGame extends Component {
         console.log(product)
         return (
             <div>
-                <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết sản phẩm</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Chi tiết sản phẩm</p>
                 </div>
-                <Container>
-                    <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
-                            {/*Parent Row 1*/}
-                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
-                                <h5>Thông tin chi tiết</h5>
-                                <Container style={{ marginTop: '3rem' }}>
-                                    <Col>
-                                        <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                            <div className="product-details-table">
-                                                <Table striped bordered style={{ width: '54rem' }}>
-
-                                                    <tbody>
-
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>1</td>
-                                                            <td style={{ padding: '5px' }}>Tên sản phẩm</td>
-                                                            <td style={{ padding: '0px' }}>{product.name}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>2</td>
-                                                            <td style={{ padding: '5px' }}>Tên rút gọn</td>
-                                                            <td style={{ padding: '0px' }}>{product.short_name}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>3</td>
-                                                            <td style={{ padding: '5px' }}>Loại</td>
-                                                            <td style={{ padding: '0px' }}>{product.type}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>4</td>
-                                                            <td style={{ padding: '5px' }}>Tiêu đề</td>
-                                                            <td style={{ padding: '0px' }}>{product.title}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>5</td>
-                                                            <td style={{ padding: '5px' }}>Mô tả</td>
-                                                            <td style={{ padding: '0px' }}>{product.description}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>6</td>
-                                                            <td style={{ padding: '5px' }}>Nhà phát triển</td>
-                                                            <td style={{ padding: '0px' }}>{product.developer}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>7</td>
-                                                            <td style={{ padding: '5px' }}>Nhà phát hành</td>
-                                                            <td style={{ padding: '0px' }}>{product.publisher}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>8</td>
-                                                            <td style={{ padding: '5px' }}>Ngày ra mắt</td>
-                                                            <td style={{ padding: '0px' }}>{product.release_date}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>9</td>
-                                                            <td style={{ padding: '5px' }}>Nền tảng</td>
-                                                            <td style={{ padding: '0px' }}>{product.platform}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>10</td>
-                                                            <td style={{ padding: '5px' }}>Giá mua</td>
-                                                            <td style={{ padding: '0px' }}>{product.purchase_price}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>11</td>
-                                                            <td style={{ padding: '5px' }}>Giá bán</td>
-                                                            <td style={{ padding: '0px' }}>{product.sale_price}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>12</td>
-                                                            <td style={{ padding: '5px' }}>Tags</td>
-                                                            <td>
-                                                                <Table bordered hover responsive="sm" className="listgame-details">
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Container>
+                        {/*Parent Row 1*/}
+                        <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
+                            <Container style={{ marginTop: '3rem' }}>
+                                <div className="parent-row-1-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                    <div className="grid-detail" style={{ display: 'flex', flexDirection: 'column' }}>
+                                        <div style={{ margin: 'auto' }}>
+                                            {/* Row 1 */}
+                                            <Row style={{ width: '52rem' }}>
+                                                <Col lg="6" style={{ paddingRight: '1.2rem' }} >
+                                                    <Row>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Thông tin chung</Card.Header>
+                                                            <Card.Body style={{ height: '22.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+                                                                <div>
+                                                                    Tên sản phẩm: {product.name}
+                                                                </div>
+                                                                <div>
+                                                                    Tên rút gọn: {product.short_name}
+                                                                </div>
+                                                                <div>
+                                                                    Thể loại: {product.type}
+                                                                </div>
+                                                                <div>
+                                                                    Nhà phát triển: {product.developer}
+                                                                </div>
+                                                                <div>
+                                                                    Nhà phát triển: {product.publisher}
+                                                                </div>
+                                                                <div>
+                                                                    Ngày ra mắt: {product.release_date}
+                                                                </div>
+                                                                <div>
+                                                                    Nền tảng: {product.platform}
+                                                                </div>
+                                                                <div>
+                                                                    Giá mua: {product.purchase_price}
+                                                                </div>
+                                                                <div>
+                                                                    Giá bán: {product.sale_price}
+                                                                </div>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                    <Row style={{ marginTop: '1rem' }}>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Phiên bản cao cấp khác</Card.Header>
+                                                            <Card.Body>
+                                                                <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th></th>
-                                                                            <th>Tags name</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        {this.showTags(product.tag)}
-                                                                    </tbody>
-                                                                </Table>
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>13</td>
-                                                            <td style={{ padding: '5px' }}>Keys</td>
-                                                            <td>
-                                                                <Row>
-                                                                    <Col md="6">
-                                                                        <Table style={{ width: '15rem' }} bordered hover responsive="sm" className="listgame-details">
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th></th>
-                                                                                    <th>Code</th>
-                                                                                    <th>Trạng thái</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                {this.showKeys(product.keys)}
-                                                                            </tbody>
-                                                                        </Table>
-                                                                    </Col>
-                                                                    <Col md="6">
-                                                                        <Table bordered hover responsive="sm" className="listgame-details">
-                                                                            <AddKey data={product.keys} id={this.props.match.params.id} />
-                                                                        </Table>
-                                                                    </Col>
-                                                                </Row>
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>14</td>
-                                                            <td style={{ padding: '5px' }}>DLC</td>
-                                                            <td>
-                                                                <Table bordered hover responsive="sm" className="listgame-details">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th></th>
-                                                                            <th>Tên</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        {this.showIncludes(product.includes)}
-                                                                    </tbody>
-                                                                </Table>
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>15</td>
-                                                            <td style={{ padding: '5px' }}>Phiên bản cao cấp khác</td>
-                                                            <td>
-                                                                <Table bordered hover responsive="sm" className="listgame-details">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th></th>
+                                                                            <th>STT</th>
                                                                             <th>Tên</th>
                                                                         </tr>
                                                                     </thead>
@@ -300,32 +219,109 @@ class DetailGame extends Component {
                                                                         {this.showIncludedIns(product.included_in)}
                                                                     </tbody>
                                                                 </Table>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </Table>
-                                            </div>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                    <Row style={{ marginTop: '1rem' }}>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Tags</Card.Header>
+                                                            <Card.Body>
+                                                                <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>STT</th>
+                                                                            <th>Tên tag</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {this.showTags(product.tag)}
+                                                                    </tbody>
+                                                                </Table>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                    <Row style={{ marginTop: '1rem' }}>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>DLC</Card.Header>
+                                                            <Card.Body>
+                                                                <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>STT</th>
+                                                                            <th>Tên</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {this.showIncludes(product.includes)}
+                                                                    </tbody>
+                                                                </Table>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                </Col>
+                                                <Col lg="6">
+                                                    <Row>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Title</Card.Header>
+                                                            <Card.Body>
+                                                                {product.title}
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                    <Row style={{ marginTop: '1rem' }}>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Mô tả</Card.Header>
+                                                            <Card.Body>
+                                                                {product.description}
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                    <Row style={{ marginTop: '1rem' }}>
+                                                        <Card style={{ padding: "0rem" }}>
+                                                            <Card.Header>Key</Card.Header>
+                                                            <Card.Body>
+                                                                <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th></th>
+                                                                            <th>Code</th>
+                                                                            <th>Trạng thái</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {this.showKeys(product.keys)}
+                                                                    </tbody>
+                                                                </Table>
+                                                            </Card.Body>
+                                                        </Card>
+                                                    </Row>
+                                                </Col>
+                                            </Row>
+                                            {/* Row 2 */}
+
                                         </div>
-                                    </Col>
-                                </Container>
+
+                                    </div>
+                                </div>
+                            </Container>
+                        </Row>
+                        {/*Parent Row 2 */}
+                        <Row style={{ display: "flex", border: '2px solid #E6E6E6', marginTop: '1rem', padding: '1rem' }}>
+                            <p style={{ fontSize: '12px' }}>Videos</p>
+                            <Row>
+                                {this.showVideos(product.videos)}
                             </Row>
-                            {/*Parent Row 2 */}
-                            <Row style={{ display: "flex", margin: '0.2rem', border: '1px solid black', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
-                                <p style={{ fontSize: '12px' }}>Videos</p>
-                                <Row>
-                                    {this.showVideos(product.videos)}
-                                </Row>
+                        </Row>
+                        {/*Parent Row 3 */}
+                        <Row style={{ display: "flex", border: '2px solid #E6E6E6', padding: '1rem' }}>
+                            <p style={{ fontSize: '16px' }}>Hình ảnh</p>
+                            <Row>
+                                {this.showImages(product.images)}
                             </Row>
-                            {/*Parent Row 3 */}
-                            <Row style={{ display: "flex", margin: '0.2rem', border: '1px solid black', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
-                                <p style={{ fontSize: '12px' }}>Hình ảnh</p>
-                                <Row>
-                                    {this.showImages(product.images)}
-                                </Row>
-                            </Row>
-                        </Card>
-                    </div>
-                </Container>
+                        </Row>
+                    </Container>
+                </div>
+
             </div>
         )
     }

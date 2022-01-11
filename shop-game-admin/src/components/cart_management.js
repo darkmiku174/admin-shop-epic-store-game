@@ -48,10 +48,12 @@ class CartManagement extends Component {
         var result = null;
         if (carts.length > 0) {
             result = carts.map((cart, index) => {
+                console.log(cart)
                 return (
                     <tr>
                         <td>{cart._id}</td>
-                        <td>{cart.user.first_name + " " + cart.user.last_name}</td>
+                        <td>{cart.user != null ? cart.user.first_name + " " + cart.user.last_name : "Khách"}</td>
+                        {/* <td>{cart.user._id}</td> */}
                         <td>{cart.status.toString()}</td>
                         <td>
                             <Link to={"/admin/cart/" + cart._id}>
@@ -80,6 +82,7 @@ class CartManagement extends Component {
 
     render() {
         var { carts } = this.state;
+
         return (
             <>
                 <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>

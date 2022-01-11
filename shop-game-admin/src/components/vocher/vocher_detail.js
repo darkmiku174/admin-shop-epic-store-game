@@ -81,11 +81,6 @@ class DetailVocher extends Component {
                                                             <td style={{ padding: '0px' }}>{vocher.code}</td>
                                                         </tr>
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>3</td>
-                                                            <td style={{ padding: '5px' }}>Loại</td>
-                                                            <td style={{ padding: '0px' }}>{vocher.type}</td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>4</td>
                                                             <td style={{ padding: '5px' }}>Giảm giá</td>
                                                             <td style={{ padding: '0px' }}>{vocher.discount + "%"}</td>

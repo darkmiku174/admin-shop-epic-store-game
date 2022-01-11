@@ -67,7 +67,7 @@ class DetailCart extends Component {
                                     <div className="parent-row-1-container"  >
                                         <div className="product-details-table">
                                             <h6>Thông tin user</h6>
-                                            <Table striped bordered style={{ width: '100%' }}>
+                                            <Table striped bordered>
                                                 <tbody>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>User ID</td>

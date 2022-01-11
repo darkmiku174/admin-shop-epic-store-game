@@ -109,9 +109,6 @@ class OrderManagement extends Component {
                             <Tab eventKey="tatca" title="Tất cả">
                                 {check === 0 && orders.length > 0 ? <Order key={0} check={check} orders={orders} /> : null}
                             </Tab>
-                            <Tab eventKey="choxacnhan" title="Chờ xác nhận" >
-                                {check === 1 && orders.length > 0 ? <Order key={1} check={check} orders={orders} /> : null}
-                            </Tab>
                             <Tab eventKey="dahuy" title="Đã hủy" >
                                 {check === 2 && orders.length > 0 ? <Order key={2} check={check} orders={orders} /> : null}
                             </Tab>

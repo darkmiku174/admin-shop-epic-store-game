@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { FaEdit } from 'react-icons/fa';
-import { Button, Table, Container,Card } from 'react-bootstrap';
+import { Button, Table, Container, Card } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 class VoucherManagement extends Component {
@@ -38,14 +38,12 @@ class VoucherManagement extends Component {
                         <td>{vocher._id}</td>
                         <td>{vocher.code}</td>
                         <td>{vocher.discount + "%"}</td>
-                        <td>{vocher.type}</td>
-                        <td>{vocher.count}</td>
                         <td>{vocher.create_date}</td>
                         <td>{vocher.time_expired}</td>
                         <td>{vocher.status ? "Còn hạn" : "Hết hạn"}</td>
                         <td style={{ display: 'flex' }}>
                             <Link to={"/admin/vocher/" + vocher._id}>
-                                <Button style={{  border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{ border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                         </td>
                     </tr>
@@ -59,23 +57,21 @@ class VoucherManagement extends Component {
         var { vochers } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#F4F6F9', height: '56px',padding:'0.5rem',paddingLeft:'5rem' }}>
-                <p style={{ fontSize: '23px',fontFamily:'Roboto'}}>Quản lý vocher</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý vocher</p>
                 </div>
-                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
                     <Container className="table-container">
                         <Link to="/admin/add_vocher">
-                            <Button  style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
+                            <Button style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm </Button>
                         </Link>
-                        <Table className="normal-table" bordered hover responsive="sm" style={{fontSize:'13px'}}>
+                        <Table className="normal-table" bordered hover responsive="sm" style={{ fontSize: '13px' }}>
                             <thead>
                                 <tr>
                                     <th></th>
                                     <th>Id</th>
-                                    <th>Code</th>
+                                    <th>Mã vocher</th>
                                     <th>Discount</th>
-                                    <th>Type</th>
-                                    <th>Count</th>
                                     <th>Create date</th>
                                     <th>Time expired</th>
                                     <th>Status</th>

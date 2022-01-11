@@ -117,13 +117,6 @@ class AddVocher extends Component {
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>3</td>
-                                                            <td style={{ padding: '5px' }}>Loại vocher</td>
-                                                            <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="type" onChange={this.onChange} />
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>4</td>
                                                             <td style={{ padding: '5px' }}>Ngày tạo</td>
                                                             <td style={{ padding: '0px' }}>
