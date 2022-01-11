@@ -66,6 +66,18 @@ class Menu extends Component {
                                         <span className="nav-text">VOUCHER</span>
                                     </Link>
                                 </li>
+                                <li onClick={() => this.setActive("REVENUE")}>
+                                    <Link to="/revenue_report">
+                                        <i className="fa fa-bar-chart-o" />
+                                        <span className="nav-text">REVENUE</span>
+                                    </Link>
+                                </li>
+                                <li onClick={() => this.setActive("KEY")}>
+                                    <Link to="/key_management">
+                                        <i className="fa fa-key  " />
+                                        <span className="nav-text">KEY</span>
+                                    </Link>
+                                </li>
 
                             </ul>
                         </div>
@@ -78,6 +90,8 @@ class Menu extends Component {
                     {active === "COLLECTION"}
                     {active === "USER"}
                     {active === "VOUCHER"}
+                    {active === "KEY"}
+                    {active === "REVENUE"}
                 </div>
             </>
         )

@@ -78,7 +78,7 @@ class AddCollection extends Component {
                                             <div>
                                                 <Row>
                                                     <Col sm="7">
-                                                        Nhập tên Collection
+                                                        Nhập tên bộ sưu tập
                                                     </Col>
                                                     <Col sm="5">
                                                         <input style={{ width: "10rem", height: '2rem' }} type="text" id="fname" name="firstname" name="name" onChange={this.onChange} />
@@ -86,14 +86,14 @@ class AddCollection extends Component {
                                                 </Row>
                                                 <Row style={{ marginTop: '1rem' }}>
                                                     <Col sm="7">
-                                                        Thêm vào Collection
+                                                        Thêm vào bộ sưu tập
                                                     </Col>
                                                     <Col sm="5">
                                                         <AddListGame list_game={collection.list_game} games={games} />
                                                     </Col>
                                                     
                                                 </Row>
-                                                <Button style={{ width: '5rem',  marginTop: '1rem' }} onClick={() => this.onAdd(collection)}>Thêm</Button>
+                                                <Button variant="secondary" style={{ width: '5rem',  marginTop: '1rem' }} onClick={() => this.onAdd(collection)}>Thêm</Button>
                                             </div>
                                         </div>
                                     </div>

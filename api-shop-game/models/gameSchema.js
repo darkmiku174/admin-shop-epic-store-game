@@ -13,6 +13,7 @@ var gameSchema = new mongoose.Schema({
     release_date: Date,
     platform: String,
     purchase_price: Number,
+    discount_price: Number,
     sale_price: Number,
     tag: Array,
     keys: [keysSchema],

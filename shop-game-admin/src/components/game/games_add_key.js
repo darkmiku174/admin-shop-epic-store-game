@@ -71,6 +71,7 @@ class Key extends Component {
             keys
         })
     }
+    
     onDeleteRow = (index) => {
         var { keys } = this.state
         keys.splice(index, 1)

@@ -93,7 +93,7 @@ class AddVocherListGame extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(game)}>Thêm</Button>
-                        <SearchBar placeholder="Enter a Book Name..." data={games} onChange={this.onChange} />
+                        <SearchBar placeholder="Enter a Game Name..." data={games} onChange={this.onChange} />
                         <Table bordered hover responsive="sm" className="listgame-details">
                             <thead>
                                 <tr>

@@ -8,9 +8,9 @@ const getColections = asyncHandler(async (req, res) => {
 
 const getCollection = asyncHandler(async (req, res) => {
     const collection = await Collection.findById(req.params.Id)
-    .populate({
-        path: "list_game"
-    })
+        .populate({
+            path: "list_game"
+        })
     res.json(collection);
 });
 

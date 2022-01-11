@@ -57,9 +57,9 @@ class UserManagement extends Component {
                 <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
                     <p style={{ color: 'white', fontSize: '23px' }}>User</p>
                 </div>
-                <Card>
-                    <Container className="table-container">
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button>
+                <Card >
+                    <Container style={{marginTop:'2rem'}} className="table-container">
+                        {/* <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button> */}
                         <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
                                 <tr>

@@ -57,7 +57,7 @@ class CollectionManagement extends Component {
         return (
             <>
                 <div style={{ backgroundColor: '#3ac9c9', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Collection</p>
+                    <p style={{ color: 'white', fontSize: '23px' }}>Bộ sưu tập</p>
                 </div>
                 <Container>
                     <Card style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
@@ -69,8 +69,8 @@ class CollectionManagement extends Component {
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Collection ID</th>
-                                        <th>Tên Collection</th>
+                                        <th>ID</th>
+                                        <th>Tên Bộ sưu tập</th>
                                     </tr>
                                 </thead>
                                 <tbody>

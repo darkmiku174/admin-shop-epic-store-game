@@ -38,7 +38,7 @@ class Order extends Component {
         return (
             <Container>
                 <Container className="table-container">
-                    <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button>
+                    {/* <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }}>Thêm</Button> */}
                     <Table className="normal-table" bordered hover responsive="lg" style={{ fontSize: '13px' }}>
                         <thead>
                             <tr>

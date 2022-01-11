@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Button, Table } from 'react-bootstrap';
+import { Container, Row, Col, Button, Table,Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 class DetailVocher extends Component {
@@ -47,14 +47,14 @@ class DetailVocher extends Component {
         var { vocher } = this.state
         return (
             <div>
+                <div style={{ height:'56px',backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
+                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết vocher</p>
+                </div>
                 <Container>
-                    <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Chi tiết vocher</p>
-                    </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Container style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
+                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
                             {/*Parent Row 1*/}
-                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', border: '1px solid black', padding: '1rem' }}>
+                            <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem',  padding: '1rem' }}>
                                 <h5>Thông tin chi tiết</h5>
                                 <Container style={{ marginTop: '3rem' }}>
                                     <Col>
@@ -134,7 +134,7 @@ class DetailVocher extends Component {
                                     </Col>
                                 </Container>
                             </Row>
-                        </Container>
+                        </Card>
                     </div>
                 </Container>
             </div>

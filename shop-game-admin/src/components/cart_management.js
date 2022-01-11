@@ -87,9 +87,9 @@ class CartManagement extends Component {
                 </div>
                 <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column' }}>
                     <Container className="table-container">
-                        <Link to="/admin/add_game">
+                        {/* <Link to="/admin/add_game">
                             <Button variant="secondary" style={{ float: 'right', width: '5rem', marginTop: '1rem', marginBottom: '1rem' }}> Thêm</Button>
-                        </Link>
+                        </Link> */}
                         <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
                                 <tr>

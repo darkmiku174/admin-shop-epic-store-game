@@ -65,7 +65,7 @@ class VoucherManagement extends Component {
                 <Card>
                     <Container className="table-container">
                         <Link to="/admin/add_vocher">
-                            <Button style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
+                            <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem',marginTop:'1rem' }}>Thêm </Button>
                         </Link>
                         <Table className="normal-table" bordered hover responsive="sm" style={{fontSize:'13px'}}>
                             <thead>

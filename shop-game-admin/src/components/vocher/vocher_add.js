@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Table, Button,Card } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -42,25 +42,40 @@ class AddVocher extends Component {
         var target = e.target;
         var name = target.name;
         var value = target.value;
+        if (name === "discount") {
+            value = parseInt(value);
+        }
+        if (name === "count") {
+            value = parseInt(value);
+        }
         this.setState(pre => ({
             vocher: {
-                ...pre.collection,
+                ...pre.vocher,
                 [name]: value
             }
         }))
     }
 
-    onAdd = (collection) => {
-        // axios({
-        //     method: 'POST',
-        //     url: 'http://localhost:5000/api/collections/add',
-        //     data: collection
-        // }).then(res => {
-        //     const { history } = this.props;
-        //     if (history) history.push('/collection_management');
-        // }).catch(err => {
-        //     console.log(err);
-        // })
+    onAdd = (vocher) => {
+        axios({
+            method: 'POST',
+            url: 'http://localhost:5000/api/vochers/add',
+            data: vocher
+        }).then(res => {
+            vocher.list_game.map((game) => {
+                axios.put('http://localhost:5000/api/games/update/discount/' + game._id,
+                    { discount_price: vocher.discount }
+                ).then(res => {
+                    console.log(res)
+                }).catch(err => {
+                    console.log(err);
+                })
+            })
+            // const { history } = this.props;
+            // if (history) history.push('/vocher_management');
+        }).catch(err => {
+            console.log(err);
+        })
     }
 
     render() {
@@ -68,10 +83,11 @@ class AddVocher extends Component {
         const { history } = this.props;
         return (
             (history) ? <div>
-                <Container style={{marignTop:'1rem'}}>
-                    <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', paddingBottom: '1rem' }}>
-                        <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm bộ sưu tập</p>
-                    </div>
+                <div style={{ height: '56px', backgroundColor: '#3ac9c9', paddingBottom: '1rem' }}>
+                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm vocher</p>
+                </div>
+                <Container style={{ marignTop: '1rem' }}>
+
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
                             {/*Parent Row 1*/}
