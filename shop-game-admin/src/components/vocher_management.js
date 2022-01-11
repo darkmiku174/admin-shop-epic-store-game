@@ -1,16 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { FaEdit } from 'react-icons/fa';
-import { Button, Table, Container, Card } from 'react-bootstrap';
+import { Button, Table, Container, Card, Row } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
+import ReactPaginate from 'react-paginate';
 class VoucherManagement extends Component {
 
 
     constructor(props) {
         super(props);
         this.state = {
-            vochers: []
+            vochers: [],
+            offset: 0,
+            orgtableData: [],
+            perPage: 10,
+            currentPage: 0
         }
     }
 
@@ -20,14 +25,40 @@ class VoucherManagement extends Component {
             url: 'http://localhost:5000/api/vochers',
             data: null
         }).then(res => {
+            var tdata = res.data;
+            var slice = tdata.slice(this.state.offset, this.state.offset + this.state.perPage)
             this.setState({
-                vochers: res.data
-            });
+                pageCount: Math.ceil(tdata.length / this.state.perPage),
+                orgtableData: tdata,
+                vochers: slice
+            })
         }).catch(err => {
             console.log(err);
         })
     }
+    handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
 
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.loadMoreData()
+        });
+
+    };
+
+    loadMoreData() {
+        const data = this.state.orgtableData;
+
+        const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+        this.setState({
+            pageCount: Math.ceil(data.length / this.state.perPage),
+            vochers: slice
+        })
+
+    }
     showVochers(vochers) {
         var result = null;
         if (vochers.length > 0) {
@@ -38,8 +69,8 @@ class VoucherManagement extends Component {
                         <td>{vocher._id}</td>
                         <td>{vocher.code}</td>
                         <td>{vocher.discount + "%"}</td>
-                        <td>{vocher.create_date}</td>
-                        <td>{vocher.time_expired}</td>
+                        <td>{new Date(vocher.create_date).toLocaleString()}</td>
+                        <td>{new Date(vocher.time_expired).toLocaleString()}</td>
                         <td>{vocher.status ? "Còn hạn" : "Hết hạn"}</td>
                         <td style={{ display: 'flex' }}>
                             <Link to={"/admin/vocher/" + vocher._id}>
@@ -72,8 +103,8 @@ class VoucherManagement extends Component {
                                     <th>Id</th>
                                     <th>Mã vocher</th>
                                     <th>Discount</th>
-                                    <th>Create date</th>
-                                    <th>Time expired</th>
+                                    <th>Ngày tạo</th>
+                                    <th>Ngày hết hạn</th>
                                     <th>Status</th>
                                     <th></th>
                                 </tr>
@@ -82,6 +113,24 @@ class VoucherManagement extends Component {
                                 {this.showVochers(vochers)}
                             </tbody>
                         </Table>
+                        <Row style={{ marginTop: '1rem', float: 'right' }}>
+                            <Row style={{ marginTop: '1rem', float: 'right' }}>
+                                <ReactPaginate
+                                    className='phantrang'
+                                    previousLabel={"prev"}
+                                    nextLabel={"next"}
+                                    breakLabel={"..."}
+                                    breakClassName={"break-me"}
+                                    pageCount={this.state.pageCount}
+                                    marginPagesDisplayed={2}
+                                    pageRangeDisplayed={5}
+                                    onPageChange={this.handlePageClick}
+                                    containerClassName={"pagination"}
+                                    subContainerClassName={"pages pagination"}
+                                    activeClassName={"active"}
+                                    disable={true} />
+                            </Row>
+                        </Row>
                     </Container>
                 </Card>
             </>

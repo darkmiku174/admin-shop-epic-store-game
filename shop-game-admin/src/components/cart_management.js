@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 import { FaEdit } from 'react-icons/fa';
-import { Button, Table, Container, Card } from 'react-bootstrap';
+import { Button, Table, Container, Card, Row } from 'react-bootstrap';
+import ReactPaginate from 'react-paginate';
+
 class CartManagement extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,11 @@ class CartManagement extends Component {
             cart: {
                 products: []
             },
-            show: false
+            show: false,
+            offset: 0,
+            orgtableData: [],
+            perPage: 10,
+            currentPage: 0
         }
     }
 
@@ -23,9 +29,13 @@ class CartManagement extends Component {
             url: 'http://localhost:5000/api/carts',
             data: null
         }).then(res => {
+            var tdata = res.data;
+            var slice = tdata.slice(this.state.offset, this.state.offset + this.state.perPage)
             this.setState({
-                carts: res.data
-            });
+                pageCount: Math.ceil(tdata.length / this.state.perPage),
+                orgtableData: tdata,
+                carts: slice
+            })
         }).catch(err => {
             console.log(err);
         })
@@ -42,7 +52,29 @@ class CartManagement extends Component {
             console.log(err);
         })
     }
+    handlePageClick = (e) => {
+        const selectedPage = e.selected;
+        const offset = selectedPage * this.state.perPage;
 
+        this.setState({
+            currentPage: selectedPage,
+            offset: offset
+        }, () => {
+            this.loadMoreData()
+        });
+
+    };
+
+    loadMoreData() {
+        const data = this.state.orgtableData;
+
+        const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+        this.setState({
+            pageCount: Math.ceil(data.length / this.state.perPage),
+            carts: slice
+        })
+
+    }
 
     showCarts(carts) {
         var result = null;
@@ -53,8 +85,7 @@ class CartManagement extends Component {
                     <tr>
                         <td>{cart._id}</td>
                         <td>{cart.user != null ? cart.user.first_name + " " + cart.user.last_name : "Khách"}</td>
-                        {/* <td>{cart.user._id}</td> */}
-                        <td>{cart.status.toString()}</td>
+                        <td>{!cart.status ? "Đã thanh toán" : "Còn trong giỏ hàng"}</td>
                         <td>
                             <Link to={"/admin/cart/" + cart._id}>
                                 <Button style={{ border: '0px solid black' }}><FaEdit /></Button>
@@ -106,6 +137,24 @@ class CartManagement extends Component {
                                 {this.showCarts(carts)}
                             </tbody>
                         </Table>
+                        <Row style={{ marginTop: '1rem', float: 'right' }}>
+                            <Row style={{ marginTop: '1rem', float: 'right' }}>
+                                <ReactPaginate
+                                    className='phantrang'
+                                    previousLabel={"prev"}
+                                    nextLabel={"next"}
+                                    breakLabel={"..."}
+                                    breakClassName={"break-me"}
+                                    pageCount={this.state.pageCount}
+                                    marginPagesDisplayed={2}
+                                    pageRangeDisplayed={5}
+                                    onPageChange={this.handlePageClick}
+                                    containerClassName={"pagination"}
+                                    subContainerClassName={"pages pagination"}
+                                    activeClassName={"active"}
+                                    disable={true} />
+                            </Row>
+                        </Row>
                     </Container>
                 </Card>
             </>

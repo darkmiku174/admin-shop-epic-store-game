@@ -13,7 +13,9 @@ import DetailCart from './components/cart/cart_detail';
 import CartManagement from './components/cart_management';
 import UserManagement from './components/user_management';
 import DetailOrder from './components/order/order_detail';
-import RevenueReport from './components/revenue_report/revenue_report';
+import ReportManagement from './components/report_management';
+
+
 
 const routes = [
     {
@@ -24,7 +26,7 @@ const routes = [
     {
         path: '/revenue_report',
         exact: true,
-        main: () => <RevenueReport />
+        main: () => <ReportManagement />
     },
     {
         path: '/admin/add_game',

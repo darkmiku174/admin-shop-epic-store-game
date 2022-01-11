@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Button, Table, Container, Card } from 'react-bootstrap';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import DeleteProductNotification from './notification/delete_product_notification';
@@ -63,7 +63,7 @@ class GamesManagement extends Component {
         var result = 0;
         if (keys.length > 0) {
             keys.map((key, index) => {
-                if (key.status) {
+                if (key.status === "false") {
                     result += 1
                 }
             })
@@ -81,7 +81,7 @@ class GamesManagement extends Component {
                         <td>{product.type}</td>
                         <td>{product.developer}</td>
                         <td>{product.publisher}</td>
-                        <td>{product.release_date}</td>
+                        <td>{new Date(product.release_date).toLocaleString()}</td>
                         <td>{product.platform}</td>
                         <td>{product.purchase_price}</td>
                         <td>{product.sale_price}</td>

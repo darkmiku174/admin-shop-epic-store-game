@@ -3,7 +3,7 @@ import Game from "../models/gameSchema.js";
 
 const getGameList = asyncHandler(async (req, res) => {
     const games = await Game.find({})
-    console.log(games)
+        .sort("name")
     res.json(games);
 });
 
@@ -45,13 +45,5 @@ const updateDiscountGame = asyncHandler(async (req, res) => {
     res.json(updateDiscount)
 });
 
-const deleteKeyGame = asyncHandler(async (req, res) => {
-    const key = await Game.findByIdAndDelete(req.params.id)
-    if (key) {
-        res.status(200).json({ message: "Delete success" })
-    } else {
-        res.status(404).json({ message: "Key not found" })
-    }
-});
 
-export { getGameList, addGame, deleteGame, getGame, updateKeyGame, deleteKeyGame, updateDiscountGame };
+export { getGameList, addGame, deleteGame, getGame, updateKeyGame, updateDiscountGame };

@@ -46,6 +46,12 @@ class AddVocher extends Component {
         if (name === "count") {
             value = parseInt(value);
         }
+        if (name === "create_date" || name === "time_expired") {
+            value = new Date(value);
+        }
+        if (name === "status") {
+            value = value === "true" ? true : false
+        }
         this.setState(pre => ({
             vocher: {
                 ...pre.vocher,
@@ -69,8 +75,8 @@ class AddVocher extends Component {
                     console.log(err);
                 })
             })
-            // const { history } = this.props;
-            // if (history) history.push('/vocher_management');
+            const { history } = this.props;
+            if (history) history.push('/vocher_management');
         }).catch(err => {
             console.log(err);
         })
@@ -78,6 +84,7 @@ class AddVocher extends Component {
 
     render() {
         var { vocher, games } = this.state
+        console.log(vocher)
         const { history } = this.props;
         return (
             (history) ? <div>
@@ -86,7 +93,7 @@ class AddVocher extends Component {
                 </div>
                 <Container>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem',marginTop:'1rem' }}>
+                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem', marginTop: '1rem' }}>
                             {/*Parent Row 1*/}
                             <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
                                 <h5>Thêm voucher</h5>
@@ -126,12 +133,17 @@ class AddVocher extends Component {
                                                                 <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="time_expired" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
-                                                       
+
                                                         <tr className="tr-edit">
                                                             <td style={{ padding: '5px' }}>5</td>
                                                             <td style={{ padding: '5px' }}>Trạng thái</td>
                                                             <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="status" onChange={this.onChange} />
+                                                                <select style={{ height: '2rem', border: '1px solid #ced4da', borderRadius: '4px', marginLeft: "1rem" }}
+                                                                    name="status"
+                                                                    onChange={this.onChange}>
+                                                                    <option value={false} onClick={() => this.onChange}>Inactive</option>
+                                                                    <option value={true} onClick={() => this.onChange}>Active</option>
+                                                                </select>
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">

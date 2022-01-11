@@ -10,7 +10,7 @@ class Key extends Component {
             keys: [],
             key: {
                 code: "",
-                status: "false"
+                status: "true"
             }
         }
     }
@@ -53,7 +53,7 @@ class Key extends Component {
                 return (
                     <tr className="tr-edit">
                         <td>{key.code}</td>
-                        <td>{key.status ? "Active" : "Inactive"}</td>
+                        <td>{!key.status ? "Active" : "Inactive"}</td>
                         <td>
                             <button onClick={() => this.onDeleteRow(index)} ><FaTrash /></button>
                         </td>
@@ -101,8 +101,8 @@ class Key extends Component {
                                 <select style={{ height: '2rem', border: '1px solid #ced4da', borderRadius: '4px', marginLeft: "1rem" }}
                                     name="status"
                                     onChange={this.onChange}>
-                                    <option value="false" onClick={() => this.onChange}>Inactive</option>
-                                    <option value="true" onClick={() => this.onChange}>Active</option>
+                                    <option value="true" onClick={() => this.onChange}>Inactive</option>
+                                    <option value="false" onClick={() => this.onChange}>Active</option>
                                 </select>
                             </Col>
                             <Col sm={4}>

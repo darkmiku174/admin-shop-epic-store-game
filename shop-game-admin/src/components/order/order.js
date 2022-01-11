@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react';
 import { FaTrash, FaEdit } from 'react-icons/fa';
-import axios from "axios";
 import { Button, Table, Container } from 'react-bootstrap';
 class Order extends Component {
 
@@ -14,11 +13,11 @@ class Order extends Component {
                 return (
                     <tr>
                         <td>{order._id}</td>
-                        <td>{order.paid_at}</td>
-                        <td>{order.user.name}</td>
+                        <td>{new Date(order.paid_at).toLocaleString()}</td>
+                        <td>{order.user.first_name + " " + order.user.last_name}</td>
                         <td>{order.payment_method.method}</td>
                         <td>{order.status.toString()}</td>
-                        <td>{order.cancelled_at}</td>
+                        <td>{new Date(order.cancelled_at).toLocaleString()}</td>
                         <td style={{ display: 'flex' }}>
                             <Link to={"/admin/order/" + order._id}>
                                 <Button style={{ border: '0px solid black' }}><FaEdit /></Button>

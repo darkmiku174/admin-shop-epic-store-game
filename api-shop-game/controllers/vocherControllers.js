@@ -4,6 +4,7 @@ import Vocher from "../models/vocherSchema.js";
 
 const getVocherList = asyncHandler(async (req, res) => {
     const vochers = await Vocher.find({})
+        .sort("create_at")
     res.json(vochers);
 });
 

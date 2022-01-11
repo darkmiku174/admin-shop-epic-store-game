@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LineChart, XAxis, YAxis, Line, CartesianGrid,PieChart } from 'recharts';
+import { LineChart, XAxis, YAxis, Line, CartesianGrid } from 'recharts';
 const data = [
     {
         name: 'Page A',

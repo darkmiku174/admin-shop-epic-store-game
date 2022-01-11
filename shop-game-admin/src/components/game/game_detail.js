@@ -99,7 +99,7 @@ class DetailGame extends Component {
                     <tr className="tr-edit">
                         <td style={{ padding: '5px' }}>{index + 1}</td>
                         <td style={{ padding: '0px' }}>{key.code}</td>
-                        <td style={{ padding: '0px' }}>{key.status === "true" ? "Active" : "Inactive"}</td>
+                        <td style={{ padding: '0px' }}>{!key.status === "true" ? "Active" : "Inactive"}</td>
                         {/* <td><DeleteKeyNotification /></td> */}
                     </tr>
                 )
@@ -190,7 +190,7 @@ class DetailGame extends Component {
                                                                     Nhà phát triển: {product.publisher}
                                                                 </div>
                                                                 <div>
-                                                                    Ngày ra mắt: {product.release_date}
+                                                                    Ngày ra mắt: {new Date(product.release_date).toLocaleString()}
                                                                 </div>
                                                                 <div>
                                                                     Nền tảng: {product.platform}

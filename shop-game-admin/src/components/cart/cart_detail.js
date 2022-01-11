@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Container, Row, Col, Table, Card } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from 'react';
+import { Card, Container, Row, Table } from 'react-bootstrap';
 class DetailCart extends Component {
 
     constructor(props) {
@@ -71,35 +71,35 @@ class DetailCart extends Component {
                                                 <tbody>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>User ID</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user._id}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user._id : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Họ tên</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.name}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user.name : "Khách"}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>SDT</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.phone_number}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user.phone_number : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Email</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.email}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user.email : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Sinh nhật</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.birthday}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? new Date(cart.user.birthday).toLocaleString() : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Tên tài khoản</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.user_name}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user.user_name : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Mật khẩu</td>
-                                                        <td style={{ padding: '5px' }}>{cart.user.password}</td>
+                                                        <td style={{ padding: '5px' }}>{cart.user != null ? cart.user.password : null}</td>
                                                     </tr>
                                                     <tr className="tr-edit">
                                                         <td style={{ padding: '5px' }}>Tình trạng cart</td>
-                                                        <td style={{ padding: '5px' }}>{cart.status.toString()}</td>
+                                                        <td style={{ padding: '5px' }}>{!cart.status ? "Đã thanh toán" : "Còn trong giỏ hàng"}</td>
                                                     </tr>
                                                 </tbody>
                                             </Table>
