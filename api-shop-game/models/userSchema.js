@@ -7,8 +7,8 @@ var userSchema = new mongoose.Schema({
     active: Boolean,
     email: String,
     phone_number: String,
-    facebook_id?: String,
-    google_id?: String,
+    facebook_id: String,
+    google_id: String,
     email_verification: Boolean
 }, {
     versionKey: false
