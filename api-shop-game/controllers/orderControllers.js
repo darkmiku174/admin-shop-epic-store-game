@@ -16,18 +16,23 @@ const getOrder = asyncHandler(async (req, res) => {
 });
 
 
-// const addCollection = asyncHandler(async (req, res) => {
-//     const collection = await Collection.create(req.body);
-//     res.json(collection);
-// });
+const getReportSellGames = asyncHandler(async (req, res) => {
+    const report = []
+    const order = await Order.find({ status: "finished" })
+        .select("cart")
+        .populate({ path: "cart", select: "products", populate:"products.product" })
+        
+    order.map((o) => {
+        o.cart.products.map((p) => {
+            if (p.keys != null) {
+                report.push({
+                    product: p.product.name,
+                    count: p.keys.length
+                })
+            }
+        })
+    });
+    res.json(report);
+});
 
-// const deleteCollection = asyncHandler(async (req, res) => {
-//     const collection = await Collection.findByIdAndDelete(req.params.id)
-//     if (collection) {
-//         res.status(200).json({ message: "Delete success" })
-//     } else {
-//         res.status(404).json({ message: "Collection not found" })
-//     }
-// });
-
-export { getOrder, getOrders };
+export { getOrder, getOrders, getReportSellGames };
