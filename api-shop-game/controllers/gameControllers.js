@@ -3,6 +3,7 @@ import Game from "../models/gameSchema.js";
 
 const getGameList = asyncHandler(async (req, res) => {
     const games = await Game.find({})
+    console.log(games)
     res.json(games);
 });
 

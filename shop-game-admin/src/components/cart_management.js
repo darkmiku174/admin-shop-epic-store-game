@@ -51,11 +51,11 @@ class CartManagement extends Component {
                 return (
                     <tr>
                         <td>{cart._id}</td>
-                        <td>{cart.user.name}</td>
+                        <td>{cart.user.first_name + " " + cart.user.last_name}</td>
                         <td>{cart.status.toString()}</td>
                         <td>
                             <Link to={"/admin/cart/" + cart._id}>
-                                <Button style={{  border: '0px solid black' }}><FaEdit /></Button>
+                                <Button style={{ border: '0px solid black' }}><FaEdit /></Button>
                             </Link>
                         </td>
                     </tr>

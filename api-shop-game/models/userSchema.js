@@ -1,12 +1,15 @@
 import mongoose from 'mongoose';
 
 var userSchema = new mongoose.Schema({
-    name: String,
-    phone_number: String,
+    first_name: String,
+    birthday: String,
+    last_name: String,
+    active: Boolean,
     email: String,
-    birthday: Date,
-    user_name: String,
-    password: String
+    phone_number: String,
+    facebook_id?: String,
+    google_id?: String,
+    email_verification: Boolean
 }, {
     versionKey: false
 })

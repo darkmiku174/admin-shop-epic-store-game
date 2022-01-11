@@ -74,7 +74,7 @@ class UserManagement extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.showUsers(users)}
+                                {/* {this.showUsers(users)} */}
                             </tbody>
                         </Table>
                     </Container>

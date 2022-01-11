@@ -31,7 +31,6 @@ app.use(Cors());
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
-
 // Dùng route ở đây
 app.use("/api/games", gameRoutes)
 app.use("/api/collections", collectionRoutes)

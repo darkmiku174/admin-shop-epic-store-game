@@ -3,14 +3,12 @@ import mongoose from 'mongoose';
 var vocherSchema = new mongoose.Schema({
     code: String,
     discount: Number,
-    type: String,
     list_game: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Game"
     }],
-    count: Number,
-    create_date: String,
-    time_expired: String,
+    create_date: Date,
+    time_expired: Date,
     status: Boolean
 }, {
     versionKey: false
