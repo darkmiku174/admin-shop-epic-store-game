@@ -99,8 +99,7 @@ class DetailGame extends Component {
                     <tr className="tr-edit">
                         <td style={{ padding: '5px' }}>{index + 1}</td>
                         <td style={{ padding: '0px' }}>{key.code}</td>
-                        <td style={{ padding: '0px' }}>{!key.status === "true" ? "Active" : "Inactive"}</td>
-                        {/* <td><DeleteKeyNotification /></td> */}
+                        <td style={{ padding: '0px' }}>{key.status == "false" ? "Active" : "Inactive"}</td>
                     </tr>
                 )
             })
@@ -280,7 +279,7 @@ class DetailGame extends Component {
                                                         <Card style={{ padding: "0rem" }}>
                                                             <Card.Header>Key</Card.Header>
                                                             <Card.Body>
-                                                                <AddKey />
+                                                                <AddKey data={product.keys} id={this.props.match.params.id} />
                                                                 <Table style={{ fontSize: '13px' }} bordered hover responsive="sm" className="listgame-details">
                                                                     <thead>
                                                                         <tr>

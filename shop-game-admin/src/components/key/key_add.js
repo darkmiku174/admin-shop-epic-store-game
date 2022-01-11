@@ -1,7 +1,6 @@
-import React, { useState, Component } from 'react';
 import axios from "axios";
-import { Form, Col, Row, Button, Table, Card, Container, Modal, Pagination } from 'react-bootstrap';
-import { FaEdit, FaTrash, FaAngleDoubleDown } from 'react-icons/fa';
+import React, { Component } from 'react';
+import { Button, Card, Col, Form, Row } from 'react-bootstrap';
 
 class AddKey extends Component {
 
@@ -10,7 +9,7 @@ class AddKey extends Component {
         this.state = {
             key: {
                 code: "",
-                status: "true"
+                status: "false"
             }
         }
     }
