@@ -68,15 +68,15 @@ class DetailOrder extends Component {
         var { order, cart } = this.state
         return (
             <div>
-                <div style={{ backgroundColor: '#3ac9c9', paddingBottom: '1rem', height: "56px" }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Chi tiết Order</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Chi tiết Order</p>
                 </div>
                 <Container>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <Card style={{ marginLeft: '8%', marginTop: '1rem' }}>
                             <Card.Header as="h6">Thông tin Order</Card.Header>
                             {/*Parent Row 1*/}
-                            <div style={{ margin: '0.2rem', padding: '1.8rem',display:'flex',justifyContent:'space-between' }}>
+                            <div style={{ margin: '0.2rem', padding: '1.8rem', display: 'flex', justifyContent: 'space-between' }}>
                                 <h6>Tình trạng: {order.status}</h6>
                                 <h6>Thanh toán vào lúc: {order.paid_at}</h6>
                                 <h6>Hủy vào lúc: {order.cancelled_at}</h6>
@@ -85,68 +85,68 @@ class DetailOrder extends Component {
                                 <Container style={{ marginTop: '1rem' }}>
                                     <Row>
                                         <Col md="6">
-                                            <div className="parent-row-1-container"  >
-                                                <div className="product-details-table">
-                                                    <h6>Thông tin Cart</h6>
-                                                    <h6 style={{marginTop:'1rem'}}>Cart ID: {cart._id}</h6>
-                                                    <h6 style={{ marginTop: '1rem' }}>Danh sách game</h6>
-                                                    <Table striped bordered style={{ width: '100%' }}>
-                                                        <thead>
-                                                            <tr>
-                                                                <th>STT</th>
-                                                                <th style={{ padding: '5px' }}>Tên game</th>
-                                                                <th style={{ padding: '5px' }}>Số lượng</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            {this.showProducts(cart.products)}
-                                                        </tbody>
-                                                    </Table>
-                                                </div>
+
+                                            <div className="product-details-table">
+                                                <h6>Thông tin Cart</h6>
+                                                <h6 style={{ marginTop: '1rem' }}>Cart ID: {cart._id}</h6>
+                                                <h6 style={{ marginTop: '1rem' }}>Danh sách game</h6>
+                                                <Table striped bordered style={{ width: '100%' }}>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>STT</th>
+                                                            <th style={{ padding: '5px' }}>Tên game</th>
+                                                            <th style={{ padding: '5px' }}>Số lượng</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {this.showProducts(cart.products)}
+                                                    </tbody>
+                                                </Table>
                                             </div>
+
                                         </Col>
                                         <Col md="6">
-                                            <div className="parent-row-1-container"  >
-                                                <div className="product-details-table">
-                                                    <h6>Thông tin User</h6>
-                                                    <br />
-                                                    <Table striped bordered style={{ width: '100%' }}>
-                                                        <tbody>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>User ID</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user._id}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Tên</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.name}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>SDT</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.phone_number}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Email</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.email}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Sinh nhật</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.birthday}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Tên tài khoản</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.user_name}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Mật khẩu</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.password}</td>
-                                                            </tr>
-                                                            <tr className="tr-edit">
-                                                                <td style={{ padding: '5px' }}>Status</td>
-                                                                <td style={{ padding: '5px' }}>{cart.user.status}</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </Table>
-                                                </div>
+
+                                            <div className="product-details-table">
+                                                <h6>Thông tin User</h6>
+                                                <br />
+                                                <Table striped bordered style={{fontSize:'13px' }}>
+                                                    <tbody>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>User ID</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user._id}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Tên</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.name}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>SDT</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.phone_number}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Email</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.email}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Sinh nhật</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.birthday}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Tên tài khoản</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.user_name}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Mật khẩu</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.password}</td>
+                                                        </tr>
+                                                        <tr className="tr-edit">
+                                                            <td style={{ padding: '5px' }}>Status</td>
+                                                            <td style={{ padding: '5px' }}>{cart.user.status}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </Table>
+
                                             </div>
                                         </Col>
                                     </Row>

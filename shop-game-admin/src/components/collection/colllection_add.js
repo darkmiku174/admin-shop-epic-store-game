@@ -62,8 +62,8 @@ class AddCollection extends Component {
         const { history } = this.props;
         return (
             (history) ? <div>
-                <div style={{ backgroundColor: '#3ac9c9', paddingLeft: '2rem', height: '56px' }}>
-                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm bộ sưu tập</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Thêm bộ sưu tập</p>
                 </div>
                 <Container style={{ margin: 'auto' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -91,9 +91,9 @@ class AddCollection extends Component {
                                                     <Col sm="5">
                                                         <AddListGame list_game={collection.list_game} games={games} />
                                                     </Col>
-                                                    
+
                                                 </Row>
-                                                <Button variant="secondary" style={{ width: '5rem',  marginTop: '1rem' }} onClick={() => this.onAdd(collection)}>Thêm</Button>
+                                                <Button  style={{ width: '5rem', marginTop: '1rem' }} onClick={() => this.onAdd(collection)}>Thêm</Button>
                                             </div>
                                         </div>
                                     </div>

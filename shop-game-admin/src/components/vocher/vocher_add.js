@@ -12,8 +12,6 @@ class AddVocher extends Component {
             vocher: {
                 code: "",
                 discount: 0,
-                type: "",
-                count: 0,
                 create_date: "",
                 time_expired: "",
                 list_game: [],
@@ -83,13 +81,12 @@ class AddVocher extends Component {
         const { history } = this.props;
         return (
             (history) ? <div>
-                <div style={{ height: '56px', backgroundColor: '#3ac9c9', paddingBottom: '1rem' }}>
-                    <p style={{ color: 'white', fontSize: '23px', paddingTop: '1rem' }}>Thêm vocher</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Thêm Vocher</p>
                 </div>
-                <Container style={{ marignTop: '1rem' }}>
-
+                <Container>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem' }}>
+                        <Card style={{ backgroundColor: 'white', width: '60rem', marginLeft: '8%', padding: '1rem',marginTop:'1rem' }}>
                             {/*Parent Row 1*/}
                             <Row style={{ margin: '0.2rem', marginTop: '1rem', marginBottom: '1rem', padding: '1rem' }}>
                                 <h5>Thêm voucher</h5>
@@ -99,7 +96,6 @@ class AddVocher extends Component {
                                             <div className="product-details-table">
                                                 <Table striped bordered style={{ width: '54rem' }}>
                                                     <thead>
-
                                                     </thead>
                                                     <tbody>
                                                         <tr className="tr-edit">
@@ -117,42 +113,36 @@ class AddVocher extends Component {
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>4</td>
+                                                            <td style={{ padding: '5px' }}>3</td>
                                                             <td style={{ padding: '5px' }}>Ngày tạo</td>
                                                             <td style={{ padding: '0px' }}>
                                                                 <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="create_date" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>5</td>
+                                                            <td style={{ padding: '5px' }}>4</td>
                                                             <td style={{ padding: '5px' }}>Ngày hết hạn</td>
                                                             <td style={{ padding: '0px' }}>
                                                                 <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="time_expired" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
+                                                       
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>6</td>
-                                                            <td style={{ padding: '5px' }}>Số lượng</td>
-                                                            <td style={{ padding: '0px' }}>
-                                                                <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="count" onChange={this.onChange} />
-                                                            </td>
-                                                        </tr>
-                                                        <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>7</td>
+                                                            <td style={{ padding: '5px' }}>5</td>
                                                             <td style={{ padding: '5px' }}>Trạng thái</td>
                                                             <td style={{ padding: '0px' }}>
                                                                 <input style={{ margin: '0px', width: '100%', height: '3rem' }} type="text" id="fname" name="status" onChange={this.onChange} />
                                                             </td>
                                                         </tr>
                                                         <tr className="tr-edit">
-                                                            <td style={{ padding: '5px' }}>8</td>
+                                                            <td style={{ padding: '5px' }}>6</td>
                                                             <td style={{ padding: '5px' }}>Danh sách game áp dụng vocher</td>
                                                             <AddVocherListGame list_game={vocher.list_game} games={games} />
                                                         </tr>
                                                     </tbody>
 
                                                 </Table>
-                                                <Button variant="secondary" style={{ float: 'right' }} onClick={() => this.onAdd(vocher)}>Thêm</Button>
+                                                <Button style={{ float: 'right' }} onClick={() => this.onAdd(vocher)}>Thêm</Button>
                                             </div>
                                         </div>
                                     </Col>

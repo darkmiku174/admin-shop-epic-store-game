@@ -84,7 +84,7 @@ class AddVocherListGame extends Component {
         var { show, list_game, games, game } = this.state
         return (
             <div>
-                <Button onClick={this.handleShow} className="selected-btn" variant="secondary" style={{ width: '10rem' }}>
+                <Button onClick={this.handleShow} className="selected-btn"  style={{ width: '10rem' }}>
                     Game List
                 </Button>
                 <Modal show={show} onHide={this.handleClose}>
@@ -92,7 +92,7 @@ class AddVocherListGame extends Component {
                         <Modal.Title>Game List</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Button variant="secondary" style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(game)}>Thêm</Button>
+                        <Button style={{ float: 'right', marginBottom: '1rem' }} onClick={() => this.onAddRow(game)}>Thêm</Button>
                         <SearchBar placeholder="Enter a Game Name..." data={games} onChange={this.onChange} />
                         <Table bordered hover responsive="sm" className="listgame-details">
                             <thead>

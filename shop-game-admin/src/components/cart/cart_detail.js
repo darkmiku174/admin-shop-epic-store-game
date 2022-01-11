@@ -53,12 +53,12 @@ class DetailCart extends Component {
         var { cart } = this.state
         return (
             <div>
-                <div style={{ backgroundColor: '#3ac9c9', paddingBottom: '1rem', height: "56px" }}>
-                    <p style={{ color: 'white', fontSize: '23px' }}>Chi tiết Cart</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Chi tiết Cart</p>
                 </div>
                 <Container>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                        <Card style={{ width: '30rem', marginLeft: '8%', marginTop: '1rem' }}>
+                        <Card style={{ marginLeft: '8%', marginTop: '1rem' }}>
                             <Card.Header as="h6">Thông tin Cart</Card.Header>
                             {/*Parent Row 1*/}
                             <Row style={{ margin: '0.2rem', marginBottom: '1rem', padding: '1rem' }}>
@@ -103,6 +103,7 @@ class DetailCart extends Component {
                                                     </tr>
                                                 </tbody>
                                             </Table>
+
                                             <h6>Danh sách game</h6>
                                             <Table bordered hover responsive="sm" className="listgame-details">
                                                 <thead>

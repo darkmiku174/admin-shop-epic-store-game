@@ -34,13 +34,14 @@ class UserManagement extends Component {
                 return (
                     <tr>
                         <td>{user._id}</td>
-                        <td>{user.name}</td>
-                        <td>{user.phone_number}</td>
+                        <td>{user.first_name + " " + user.last_name}</td>
+                        <td>{user.birthday}</td>
+                        <td>{user.active}</td>
                         <td>{user.email}</td>
-                        <td>{user.birthday.toString()}</td>
-                        <td>{user.user_name}</td>
-                        <td>{user.password}</td>
-                        <td>{user.status.toString()}</td>
+                        <td>{user.phone_number}</td>
+                        <td>{user.facebook_id}</td>
+                        <td>{user.google_id}</td>
+                        <td>{user.email_verification}</td>
                         <td style={{ display: 'flex' }}>
                             <DeleteUserNotification data={user._id} />
                         </td>
@@ -54,11 +55,11 @@ class UserManagement extends Component {
         var { users } = this.state
         return (
             <>
-                <div style={{ backgroundColor: '#F4F6F9', height: '56px',padding:'0.5rem',paddingLeft:'5rem' }}>
-                    <p style={{ fontSize: '23px',fontFamily:'Roboto'}}>Quản lý người dùng</p>
+                <div style={{ backgroundColor: '#F4F6F9', height: '56px', padding: '0.5rem', paddingLeft: '5rem' }}>
+                    <p style={{ fontSize: '23px', fontFamily: 'Roboto' }}>Quản lý người dùng</p>
                 </div>
-                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column',border:'none' }}>
-                    <Container style={{marginTop:'2rem'}} className="table-container">
+                <Card style={{ padding: '1rem', marginLeft: '1rem', display: 'flex', flexDirection: 'column', border: 'none' }}>
+                    <Container style={{ marginTop: '2rem' }} className="table-container">
                         {/* <Button  style={{ float: 'right', marginBottom: '1rem', marginTop: '1rem' }}>Thêm +</Button> */}
                         <Table style={{ fontSize: '13px' }} className="normal-table" bordered hover responsive="sm">
                             <thead>
@@ -70,11 +71,12 @@ class UserManagement extends Component {
                                     <th>Email</th>
                                     <th>SDT</th>
                                     <th>Facebook ID</th>
+                                    <th>Google ID</th>
                                     <th>Email verification</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* {this.showUsers(users)} */}
+                                {this.showUsers(users)}
                             </tbody>
                         </Table>
                     </Container>
