@@ -1,27 +1,248 @@
 [{
   "_id": {
-    "$oid": "61d40839262feac9f6a02745"
+    "$oid": "619e32b47661fa10e6afb5c9"
   },
-  "name": "Nguyễn Văn C",
-  "phone_number": "0865506673",
-  "email": "cubo1431@gmail.com",
+  "first_name": "Vi",
+  "middle_name": "",
   "birthday": {
-    "$date": "2021-06-09T14:37:48Z"
+    "$date": "2000-08-11T17:00:00Z"
   },
-  "user_name": "cubo142",
-  "password": "asdasd",
-  "status": false
+  "last_name": "Nguyen Hung",
+  "email": "an.nickhcm2000v2@gmail.com",
+  "phone_number": "0965493574",
+  "password": "$2a$10$N1zZA2rSDFRdD5pIzCO1luAmtEECVpYnJUCJGIqHJheOQyX9hS3xy",
+  "active": true,
+  "__v": 0,
+  "refresh_token": "",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a"
 },{
   "_id": {
-    "$oid": "61d40839262feac9f6a02746"
+    "$oid": "61a05579ac8460a4a03a4625"
   },
-  "name": "Nguyễn Văn A",
-  "phone_number": "0865506623",
-  "email": "dudu1441@gmail.com",
+  "first_name": "Jane",
+  "middle_name": "",
   "birthday": {
-    "$date": "2021-07-09T14:37:48Z"
+    "$date": "2000-08-11T17:00:00Z"
   },
-  "user_name": "dudu245",
-  "password": "durandal444",
-  "status": false
+  "last_name": "Doe",
+  "email": "janedoe@gmail.com",
+  "phone_number": "0999999999",
+  "password": "$2a$10$t7f9hTyu95s6Zk8i1GT.3u12uN7aZnWH0pqP8qz5ZFYm8ThxCyvAm",
+  "active": true,
+  "__v": 0,
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a"
+},{
+  "_id": {
+    "$oid": "61a20ba8b8030b3ed787e651"
+  },
+  "first_name": "Nick",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "Nguyen",
+  "email": "xstk2000v2@gmail.com",
+  "phone_number": "09651222412",
+  "password": "$2a$10$CSmC0D/SaD1SGoRgGHDIwua6NgWKx.PqrksKnEXBIlFhrX/J/VxvC",
+  "active": true,
+  "__v": 0,
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a"
+},{
+  "_id": {
+    "$oid": "61a2f6d9d12ab23fc937368d"
+  },
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWEyZjZkOWQxMmFiMjNmYzkzNzM2OGQiLCJpYXQiOjE2MzgwNjk5NzcsImV4cCI6MTY0MDY2MTk3N30.w0QJTCxdAne5a_o4cuPLaHPgfJ3a7yErcpbgwANS8Jw",
+  "first_name": "Nick",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2000-08-11T17:00:00Z"
+  },
+  "last_name": "Nguyen",
+  "email": "an.nickhcm2000v4@gmail.com",
+  "phone_number": "0965493574",
+  "password": "$2a$10$8KLltpX32P73e6QeHstqYePDXy/j6POptk3wR67SwHbV4N.fg3G8q",
+  "active": true,
+  "__v": 0,
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a"
+},{
+  "_id": {
+    "$oid": "61aaea051a461b17dd944e3c"
+  },
+  "refresh_token": "",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a",
+  "active": true,
+  "first_name": "john",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "doe",
+  "email": "johndoe@gmail.com",
+  "phone_number": null,
+  "password": "$2a$10$yDOfsQztQF9wcN45yX46neUBdmzYAapLibbtKQc0AfUdw9pzY/U2i",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61af62ec5047766b2f0eeeb8"
+  },
+  "email_verification": true,
+  "refresh_token": "",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a",
+  "active": true,
+  "first_name": "kidaj",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "kidaj",
+  "email": "kidaj.test@inbox.testmail.app",
+  "phone_number": null,
+  "password": "$2a$10$BvGAxbMeOhvcdDMnRIrwBumwZRhxAbFNdooBq9ke46AlyageN4WlW",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b0163f96bc9b404eb6230c"
+  },
+  "email_verification": false,
+  "refresh_token": "",
+  "avatar": "https://scontent.fhan5-6.fna.fbcdn.net/v/t1.30497-1/c59.0.200.200a/p200x200/84241059_189132118950875_4138507100605120512_n.jpg?_nc_cat=1&ccb=1-5&_nc_sid=dfd37d&_nc_ohc=XkZBV1yvJAcAX9QGKQV&_nc_ht=scontent.fhan5-6.fna&oh=00_AT891bzxU6nzZn8JpwrIMZMnk2u3wvtFzCLX85R-xTC1cw&oe=62049704",
+  "active": true,
+  "first_name": "User",
+  "last_name": "Open",
+  "email": "open_zxuguay_user@tfbnw.net",
+  "phone_number": "",
+  "birthday": null,
+  "facebook_id": "109590098224424",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b020cbc2aa5c799133a393"
+  },
+  "email_verification": true,
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWIwMjBjYmMyYWE1Yzc5OTEzM2EzOTMiLCJpYXQiOjE2Mzg5MzI3MDUsImV4cCI6MTY0MTUyNDcwNX0.8w4Q6IYHxMAYdwsgixWpdZ3uTdNFp7-_agl6fwuUR_k",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a",
+  "active": true,
+  "first_name": "john",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "doe",
+  "email": "wekora6723@servergem.com",
+  "phone_number": null,
+  "password": "$2a$10$tbROMGI4fZbnWO7N/Ywcl.ehZvHSv5fpRyrK/IEUXx3EG14f5eb0e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b021f4c2aa5c799133a3eb"
+  },
+  "email_verification": true,
+  "refresh_token": "",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a",
+  "active": true,
+  "first_name": "jane",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "doe",
+  "email": "sebamo2712@shirulo.com",
+  "phone_number": null,
+  "password": "$2a$10$wKYNkqy9b4HPxKocwePRqO0z7QoabK6skQ3jsxYoI6KJcb7JmBwwC",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b035c7c2aa5c799133a70c"
+  },
+  "email_verification": false,
+  "refresh_token": "",
+  "avatar": "https://firebasestorage.googleapis.com/v0/b/images-b3099.appspot.com/o/avatar.svg?alt=media&token=ba3ea983-3133-41d9-88c4-002deffd991a",
+  "active": true,
+  "first_name": "test",
+  "middle_name": "",
+  "birthday": {
+    "$date": "2014-08-18T14:11:54Z"
+  },
+  "last_name": "test",
+  "email": "womojih587@slvlog.com",
+  "phone_number": null,
+  "password": "$2a$10$jU3f9R7/j2ZjYkCrcrbCTebBBBlnlFe80fhs9EcS.RAnVrrx8aSbG",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b1a25e2721c10dab6a5231"
+  },
+  "email_verification": true,
+  "refresh_token": "",
+  "avatar": "https://lh3.googleusercontent.com/a/AATXAJwYwWhHko1m6sbhTjGkdKHTYAzqH50nx-ln4vpH=s96-c",
+  "active": true,
+  "first_name": "xstk2000",
+  "last_name": "v2",
+  "email": "xstk2000@gmail.com",
+  "phone_number": "",
+  "birthday": null,
+  "google_id": "114881225218311007125",
+  "__v": 0,
+  "password": "$2a$10$WIEtJny/ejm14MKfkiwJEerZ5E.AEMG0zCuOqbI7nyP7tR8JohU0K",
+  "facebook_id": "328314142517395"
+},{
+  "_id": {
+    "$oid": "61ddb16db193a200166a3fb0"
+  },
+  "email_verification": true,
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWRkYjE2ZGIxOTNhMjAwMTY2YTNmYjAiLCJpYXQiOjE2NDE5NTExMDYsImV4cCI6MTY0NDU0MzEwNn0.ZxCvM-IGrjRttHIspXVKXk1JEqq8Y4kmpo-7gTku3s8",
+  "avatar": "https://lh3.googleusercontent.com/a/AATXAJxxSKJlodZx_KzbstBlQrLa3wByO33wwkiBj_Yh=s96-c",
+  "active": true,
+  "first_name": "Nhat Minh",
+  "last_name": "Tran",
+  "email": "nhminh226@gmail.com",
+  "phone_number": "",
+  "birthday": null,
+  "google_id": "102843455054930545292",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ddbbec8445dc00162a2091"
+  },
+  "email_verification": true,
+  "refresh_token": "",
+  "avatar": "https://lh3.googleusercontent.com/a/AATXAJzss_h6HEKjEHpC7vob4GC_qCd1YbKHrAz73QK4=s96-c",
+  "active": true,
+  "first_name": "Minh",
+  "last_name": "Nhật",
+  "email": "nhminh381@gmail.com",
+  "phone_number": "",
+  "birthday": null,
+  "google_id": "113397835054033531644",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61ddbd068445dc00162a213e"
+  },
+  "email_verification": true,
+  "refresh_token": "",
+  "avatar": "https://lh3.googleusercontent.com/a/AATXAJyp-lysIVg7VBu9iBBH3VN8h73R-XARvLKV5vKO=s96-c",
+  "active": true,
+  "first_name": "Hùng Vĩ",
+  "last_name": "Nguyễn",
+  "email": "an.nickhcm2000@gmail.com",
+  "phone_number": "",
+  "birthday": null,
+  "google_id": "104413324622825183373",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61de24548445dc00162a2799"
+  },
+  "email_verification": true,
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWRlMjQ1NDg0NDVkYzAwMTYyYTI3OTkiLCJpYXQiOjE2NDE5NDk4MzMsImV4cCI6MTY0NDU0MTgzM30.fYXu_fPZJFMjDl75WhO2tGcKCbwb0ek9N1ZpXLUQXLw",
+  "avatar": "https://lh3.googleusercontent.com/a/AATXAJzKkF-9HlMFL1fYe_i6fhmer7kkC3j0uDu8anYV=s96-c",
+  "active": true,
+  "first_name": "Bằng",
+  "last_name": "Nguyễn Quốc",
+  "email": "darkmiku174@gmail.com",
+  "phone_number": "",
+  "birthday": null,
+  "google_id": "100863780655688204922",
+  "__v": 0
 }]

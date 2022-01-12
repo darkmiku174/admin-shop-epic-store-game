@@ -2,8 +2,11 @@
   "_id": {
     "$oid": "61accfa63bd1a62f4346b907"
   },
-  "name": "top sale june",
+  "name": "hot",
   "list_game": [
+    {
+      "$oid": "61ddb8007da8e228ffc8a902"
+    },
     {
       "$oid": "6193b1e98ee567321631b9e2"
     },
@@ -20,12 +23,45 @@
       "$oid": "6193b1e98ee567321631b9e6"
     }
   ]
-},
-{
+},{
   "_id": {
     "$oid": "61accfa63bd1a62f4346b908"
   },
-  "name": "top sale july",
+  "name": "new release",
+  "list_game": [
+    {
+      "$oid": "61ddb8007da8e228ffc8a901"
+    },
+    {
+      "$oid": "61ddb8007da8e228ffc8a902"
+    },
+    {
+      "$oid": "61ddb8007da8e228ffc8a903"
+    },
+    {
+      "$oid": "61ddb8007da8e228ffc8a904"
+    },
+    {
+      "$oid": "61ddb8007da8e228ffc8a905"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9b5"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9b8"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9b9"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9b1"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "61accfa63bd1a62f4346b909"
+  },
+  "name": "most popular",
   "list_game": [
     {
       "$oid": "6193b1e98ee567321631b9a1"
@@ -58,50 +94,11 @@
       "$oid": "6193b1e98ee567321631b9b7"
     }
   ]
-},
-{
-  "_id": {
-    "$oid": "61accfa63bd1a62f4346b909"
-  },
-  "name": "top sale september",
-  "list_game": [
-    {
-      "$oid": "6193b1e98ee567321631b9d1"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9d2"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9d3"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9c3"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9c5"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9c6"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9c8"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9c9"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9d8"
-    },
-    {
-      "$oid": "6193b1e98ee567321631b9d9"
-    }
-  ]
-},
-{
+},{
   "_id": {
     "$oid": "61accfa63bd1a62f4346b911"
   },
-  "name": "top sale october",
+  "name": "recently update",
   "list_game": [
     {
       "$oid": "6193b1e98ee567321631b9a2"
@@ -128,27 +125,38 @@
       "$oid": "6193b1e98ee567321631b9f5"
     },
     {
+      "$oid": "61ddb8007da8e228ffc8a905"
+    },
+    {
       "$oid": "6193b1e98ee567321631b9f6"
     },
     {
       "$oid": "6193b1e98ee567321631b9c4"
     }
   ]
-},
-{
+},{
   "_id": {
     "$oid": "61accfa63bd1a62f4346b912"
   },
-  "name": "top sale november",
+  "name": "top sale",
   "list_game": [
     {
-      "$oid": "6193b1e98ee567321631b9c1"
+      "$oid": "6193b1e98ee567321631b9c4"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9f3"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9c3"
     },
     {
       "$oid": "6193b1e98ee567321631b9c2"
     },
     {
-      "$oid": "6193b1e98ee567321631b9c4"
+      "$oid": "6193b1e98ee567321631b9a6"
+    },
+    {
+      "$oid": "61ddb8007da8e228ffc8a903"
     },
     {
       "$oid": "6193b1e98ee567321631b9a7"
@@ -167,6 +175,9 @@
     },
     {
       "$oid": "6193b1e98ee567321631b9f8"
+    },
+    {
+      "$oid": "6193b1e98ee567321631b9c1"
     },
     {
       "$oid": "6193b1e98ee567321631b9f9"
